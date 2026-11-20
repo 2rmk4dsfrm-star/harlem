@@ -21,10 +21,14 @@ python3 -m http.server 8000   # then visit http://localhost:8000
 
 ## Publish
 
-The site is static, so any static host works:
+The site is hosted on **GitHub Pages**, deployed from the `main` branch, root folder:
 
-- **Netlify:** drag the project folder onto app.netlify.com/drop
-- **Cloudflare Pages / GitHub Pages:** connect this repository and set the root folder as the site
+- Website: https://2rmk4dsfrm-star.github.io/harlem/
+- Brand board: https://2rmk4dsfrm-star.github.io/harlem/brand/
+
+Every push to `main` republishes the site within a minute or two. `.nojekyll` tells GitHub to serve the files as they are.
+
+The site is static, so it would also run on Netlify or Cloudflare Pages without changes. If you move to your own domain, update the three `github.io` URLs at the top of `index.html`.
 
 Before launch, work through the checklist in `docs/site-plan.md`. Search the code for `TODO-LAUNCH` to find every placeholder.
 
