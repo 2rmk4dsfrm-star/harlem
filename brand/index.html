@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Harlem Group Brand Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Logo, colour hex codes, typography, components and voice for the Harlem Group brand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+/* Layout: a depot noticeboard. Full-bleed navy bands, a 12-column board inside, every panel leaning on the brand's 15-degree angle. */
+:root {
+  color-scheme: dark;
+  /* Brand colours (exact poster values) */
+  --navy: #0C2543;   /* Depot Navy  - ground */
+  --night: #081B33;  /* Night Run   - deepest panels */
+  --route: #102F52;  /* Route Navy  - diagonal panels, alt rows */
+  --lane: #13335A;   /* Lane Blue   - tiles, cards, table rows */
+  --line: #2B4D78;   /* Kerb Line   - borders, dividers */
+  --lime: #C6F432;   /* Hi-Vis Lime - money + emphasis */
+  --sky: #5FCFFA;    /* Signal Sky  - action + contact */
+  --white: #FFFFFF;
+  --mist: #C9D6E6;   /* secondary text */
+  --slate: #A9BCD3;  /* captions */
+  --steel: #8FA3BC;  /* muted, illustration greys */
+  --brake: #F2545B;  /* errors, warnings, "don't" */
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --r-sm: 10px; --r-md: 16px; --r-lg: 24px;
+}
+* { box-sizing: border-box }
+body { background: var(--navy); color: var(--white); font-family: var(--font); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased }
+.wrap { max-width: 1240px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+@media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)) } }
+h1, h2, h3 { margin: 0; text-wrap: balance; letter-spacing: -0.02em }
+p { margin: 0 }
+.label { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--lime) }
+.muted { color: var(--slate) }
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px; color: var(--mist); background: var(--night); padding: 2px 6px; border-radius: 6px }
+:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 6px }
+
+/* ---------- Masthead ---------- */
+.masthead { position: relative; overflow: hidden; margin-top: calc(-1 * env(safe-area-inset-top, 0px)); padding-top: calc(env(safe-area-inset-top, 0px) + 28px); padding-bottom: 56px; border-bottom: 1px solid var(--line) }
+.masthead::before { content: ""; position: absolute; top: 0; bottom: 0; right: -10%; width: 46%; background: var(--route); transform: skewX(-15deg); transform-origin: top right; pointer-events: none }
+.masthead > * { position: relative }
+.mast-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px }
+.mast-top svg { width: 230px; height: auto; color: var(--white) }
+.mast-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 14px; color: var(--mist) }
+.pill { display: inline-flex; align-items: center; height: 34px; padding: 0 16px; border: 2px solid var(--lime); border-radius: 999px; color: var(--lime); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase }
+.thesis { margin-top: 56px; display: grid; gap: 20px; max-width: 900px }
+.thesis h1 { font-size: clamp(34px, 5.6vw, 64px); line-height: 1.02; font-weight: 800; letter-spacing: -0.035em }
+.thesis h1 .l { color: var(--lime) }
+.thesis h1 .s { color: var(--sky) }
+.thesis p { font-size: 18px; color: var(--mist); max-width: 62ch }
+
+/* ---------- Sections ---------- */
+section { padding-block: 64px; border-bottom: 1px solid var(--line) }
+.sec-head { display: grid; gap: 10px; margin-bottom: 32px; max-width: 760px }
+.sec-head h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.08; font-weight: 800 }
+.sec-head p { color: var(--mist); font-size: 17px }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(12, minmax(0, 1fr)) }
+.grid > * { min-width: 0; grid-column: span 12 }
+.panel { background: var(--lane); border-radius: var(--r-md); padding: 24px; display: flex; flex-direction: column; gap: 16px }
+.panel.night { background: var(--night) }
+.panel.route { background: var(--route) }
+.cap { font-size: 14px; color: var(--slate); line-height: 1.5 }
+.cap b { color: var(--white); font-weight: 600 }
+@media (min-width: 720px) {
+  .s4 { grid-column: span 6 } .s6 { grid-column: span 6 } .s8 { grid-column: span 12 } .s3 { grid-column: span 6 } .s5 { grid-column: span 6 } .s7 { grid-column: span 6 }
+}
+@media (min-width: 1040px) {
+  .s3 { grid-column: span 3 } .s4 { grid-column: span 4 } .s5 { grid-column: span 5 } .s7 { grid-column: span 7 } .s8 { grid-column: span 8 }
+}
+
+/* ---------- Logo ---------- */
+.stage { flex: 1; display: grid; place-items: center; min-height: 220px; border-radius: var(--r-sm); position: relative }
+.stage.on-navy { background: var(--navy) }
+.stage.on-lime { background: var(--lime); color: var(--navy) }
+.stage.on-white { background: var(--white); color: var(--navy) }
+.stage.on-night { background: var(--night) }
+.clear { position: relative; padding: 26px; outline: 1.5px dashed var(--sky); outline-offset: 0 }
+.clear svg { display: block; width: clamp(160px, 22vw, 230px); height: auto }
+.clear .x { position: absolute; font-size: 11px; font-weight: 700; color: var(--sky); letter-spacing: .06em }
+.clear .x.t { top: 6px; left: 50%; transform: translateX(-50%) }
+.clear .x.l { left: 6px; top: 50%; transform: translateY(-50%) }
+.lockup-h { width: min(100%, 300px); height: auto }
+.marks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px }
+.marks .stage { min-height: 110px }
+.marks svg { width: 54px; height: auto }
+.sizes { display: flex; align-items: flex-end; gap: 22px; flex-wrap: wrap; padding: 20px; background: var(--navy); border-radius: var(--r-sm) }
+.sizes figure { margin: 0; display: grid; gap: 8px; justify-items: center; font-size: 12px; color: var(--slate); font-variant-numeric: tabular-nums }
+.sizes svg { display: block; color: var(--white) }
+.donts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px }
+.dont { display: grid; gap: 10px }
+.dont .stage { min-height: 110px; overflow: hidden }
+.dont .stage svg { width: 64px; height: auto }
+.dont p { font-size: 13px; color: var(--mist); line-height: 1.4; display: flex; gap: 8px; align-items: flex-start }
+.no { flex: none; display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--brake); color: var(--navy) }
+.no svg { width: 12px; height: 12px }
+
+/* ---------- Colour ---------- */
+.swatches { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)) }
+.swatches.small { grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)) }
+.sw { background: var(--lane); border-radius: var(--r-md); overflow: hidden; display: flex; flex-direction: column }
+.sw .chip { height: 150px; background: var(--c); border-bottom: 1px solid var(--line); display: flex; align-items: flex-end; padding: 14px 16px; color: var(--on); font-weight: 800; font-size: 28px; letter-spacing: -0.03em }
+.swatches.small .chip { height: 96px; font-size: 20px }
+.sw .body { padding: 16px; display: grid; gap: 6px; flex: 1; align-content: start }
+.sw .name { font-weight: 700; font-size: 17px }
+.sw .vals { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 13px; color: var(--slate); font-variant-numeric: tabular-nums }
+.hex { font: 700 15px/1 var(--font); letter-spacing: .02em; color: var(--white); background: var(--night); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; font-variant-numeric: tabular-nums }
+.hex:hover { border-color: var(--sky); color: var(--sky) }
+.sw .role { font-size: 14px; color: var(--mist); line-height: 1.45 }
+.group-label { margin: 36px 0 14px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap }
+.group-label h3 { font-size: 20px; font-weight: 700 }
+.group-label span { color: var(--slate); font-size: 14px }
+.ratio { display: flex; height: 64px; border-radius: var(--r-sm); overflow: hidden; border: 1px solid var(--line) }
+.ratio > div { display: flex; align-items: flex-end; padding: 8px 10px; font-size: 12px; font-weight: 700; min-width: 0; white-space: nowrap; overflow: hidden }
+.contrast { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)) }
+.pair { border-radius: var(--r-sm); padding: 14px; display: grid; gap: 6px; border: 1px solid var(--line); background: var(--bg) }
+.pair .aa { color: var(--fg); font-size: 30px; font-weight: 800; line-height: 1; letter-spacing: -0.02em }
+.pair .meta { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; color: var(--fg); font-size: 12.5px; font-weight: 600; opacity: .95 }
+.badge { font-size: 11px; font-weight: 800; letter-spacing: .06em; padding: 3px 7px; border-radius: 6px; background: var(--navy); color: var(--lime) }
+.badge.fail { background: var(--brake); color: var(--navy) }
+
+/* ---------- Type ---------- */
+.specimen { display: grid; gap: 4px }
+.specimen .big { font-size: clamp(96px, 16vw, 200px); line-height: 1; padding-bottom: 8px; font-weight: 900; letter-spacing: -0.06em; color: var(--lime) }
+.weights { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 18px; color: var(--mist) }
+.scale { display: grid }
+.row { display: grid; gap: 6px 24px; grid-template-columns: 1fr; padding-block: 18px; border-top: 1px solid var(--line) }
+.row:first-child { border-top: 0; padding-top: 0 }
+@media (min-width: 720px) { .row { grid-template-columns: 170px minmax(0, 1fr); align-items: baseline } }
+.row .spec { font-size: 12.5px; color: var(--slate); font-variant-numeric: tabular-nums; line-height: 1.45 }
+.row .spec b { display: block; color: var(--white); font-size: 13px; font-weight: 700 }
+.t-display { font-size: clamp(56px, 8vw, 96px); line-height: .9; font-weight: 900; letter-spacing: -0.05em; color: var(--lime) }
+.t-h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1; font-weight: 800; letter-spacing: -0.035em; text-transform: uppercase }
+.t-h2 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.1; font-weight: 800; letter-spacing: -0.025em }
+.t-h3 { font-size: 22px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em }
+.t-body { font-size: 17px; line-height: 1.55; color: var(--mist); max-width: 60ch }
+.t-label { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--lime) }
+.t-fig { font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; display: flex; flex-wrap: wrap; gap: 4px 22px }
+.t-fig .l { color: var(--lime) }
+
+/* ---------- Graphic language ---------- */
+.lean-demo { display: grid; gap: 14px }
+.banner { position: relative; isolation: isolate; color: var(--navy); padding: 18px 64px 18px 24px; width: fit-content; max-width: 100% }
+.banner::before { content: ""; position: absolute; inset: 0; background: var(--lime); z-index: -1; clip-path: polygon(0 0, 100% 0, calc(100% - 28px) 100%, 0 100%) }
+.banner b { display: block; font-size: clamp(26px, 3.4vw, 40px); line-height: 1; font-weight: 900; letter-spacing: -0.04em }
+.banner span { display: block; margin-top: 6px; font-weight: 700; font-size: 15px }
+.angle { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--mist) }
+.angle svg { flex: none }
+.bgdemo { position: relative; height: 120px; border-radius: var(--r-sm); background: var(--navy); overflow: hidden; margin-top: 6px }
+.bgdemo span { position: absolute; top: 0; bottom: 0; right: -12%; width: 55%; background: var(--route); transform: skewX(-15deg); transform-origin: top right }
+.scene { width: 100%; height: auto; display: block }
+.hivis { font-size: clamp(20px, 2.4vw, 26px); color: var(--mist); line-height: 1.5 }
+.hivis b { color: var(--white) }
+.hivis u { text-decoration: none; color: var(--white); font-weight: 700; box-shadow: inset 0 -4px 0 var(--lime); padding-bottom: 2px }
+.icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 12px }
+.icons figure { margin: 0; display: grid; justify-items: center; gap: 6px; font-size: 11.5px; color: var(--slate) }
+.tile { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 12px; background: var(--route); color: var(--lime) }
+.tile svg, .ic { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round }
+
+/* ---------- Components ---------- */
+.btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: center }
+.btn { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 22px; border-radius: 14px; font: 700 16px/1 var(--font); border: 2px solid transparent; text-decoration: none; cursor: pointer }
+.btn .ic { width: 22px; height: 22px; stroke-width: 2.2 }
+.btn.sky { background: var(--sky); color: var(--navy) }
+.btn.ghost { background: transparent; color: var(--white); border-color: var(--line) }
+.btn.small { height: 40px; padding: 0 14px; font-size: 14px; border-radius: 10px }
+.benefit { display: flex; gap: 14px; align-items: flex-start }
+.benefit .tile { flex: none; background: var(--lane) }
+.benefit b { display: block; font-size: 18px; font-weight: 700 }
+.benefit span { color: var(--mist); font-size: 15px }
+.benefits { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)) }
+.rtable { border: 2px solid var(--lime); border-radius: var(--r-md); overflow: hidden; font-variant-numeric: tabular-nums }
+.rtable .head, .rtable .r { display: grid; grid-template-columns: minmax(0, 1fr) 128px }
+.rtable .head span { white-space: nowrap }
+.rtable .head { background: var(--lime); color: var(--navy); font-size: 12.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase }
+.rtable .head span { padding: 10px 16px }
+.rtable .head span:last-child { text-align: right }
+.rtable .r span { padding: 10px 16px; font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 10px }
+.rtable .r:nth-child(even) { background: var(--lane) }
+.rtable .r:nth-child(odd) { background: var(--route) }
+.rtable .r span:last-child { background: var(--night); justify-content: flex-end; font-weight: 800; font-size: 20px }
+.rtable .r .up { color: var(--lime) }
+.rtable .pin { width: 16px; height: 16px; color: var(--lime); fill: none; stroke: currentColor; stroke-width: 2.4 }
+.rtable .foot { background: var(--sky); color: var(--navy); padding: 10px 16px; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 10px }
+.rtable .foot svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2 }
+.steps { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-weight: 600; font-size: 18px }
+.steps .n { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--lime); color: var(--navy); font-weight: 800; font-size: 16px; margin-right: 8px }
+.steps .ar { width: 18px; height: 18px; color: var(--steel); fill: none; stroke: currentColor; stroke-width: 2 }
+.cta { background: var(--sky); color: var(--navy); border-radius: var(--r-lg); padding: clamp(16px, 4vw, 22px) clamp(16px, 4vw, 26px); display: flex; align-items: center; gap: clamp(10px, 3vw, 18px) }
+.cta small { font-size: clamp(11px, 3vw, 14px) }
+.cta svg { flex: none; width: clamp(30px, 8vw, 46px); height: clamp(30px, 8vw, 46px); fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linejoin: round }
+.cta small { display: block; font-size: 14px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase }
+.cta b { display: block; font-size: clamp(24px, 6.6vw, 50px); line-height: 1; font-weight: 900; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; white-space: nowrap }
+.cta div { min-width: 0 }
+
+/* ---------- Voice ---------- */
+.principles { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)) }
+.principles .panel h3 { font-size: 20px }
+.principles .panel p { color: var(--mist); font-size: 15px }
+.dodont { display: grid; gap: 12px }
+.dd { display: grid; gap: 10px; grid-template-columns: 1fr }
+@media (min-width: 720px) { .dd { grid-template-columns: 1fr 1fr } }
+.dd > div { border-radius: var(--r-sm); padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.4 }
+.dd .do { background: var(--lane); color: var(--white); font-weight: 600 }
+.dd .dn { background: var(--night); color: var(--slate); text-decoration: line-through; text-decoration-color: var(--brake); text-decoration-thickness: 2px }
+.yes { flex: none; display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--lime); color: var(--navy) }
+.yes svg, .no svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 3.5 }
+.house { display: grid; gap: 0; border-top: 1px solid var(--line) }
+.house div { display: grid; grid-template-columns: 1fr; gap: 4px 20px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px }
+@media (min-width: 720px) { .house div { grid-template-columns: 160px minmax(0, 1fr) } }
+.house dt { font-weight: 700; color: var(--white) }
+.house dd { margin: 0; color: var(--mist) }
+.house dd b { color: var(--lime); font-weight: 700 }
+
+/* ---------- Formats ---------- */
+.formats { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px }
+.fmt { display: grid; gap: 10px }
+.fmt .frame { border: 2px solid var(--sky); border-radius: 8px; background: var(--route); display: grid; place-items: center; color: var(--sky); font-weight: 800; font-size: 14px; position: relative; overflow: hidden }
+.fmt .frame::after { content: ""; position: absolute; inset: 7%; border: 1px dashed var(--line); border-radius: 4px }
+.fmt b { font-size: 16px } .fmt span { color: var(--slate); font-size: 13.5px; display: block; line-height: 1.4 }
+
+footer { padding-block: 40px 56px; color: var(--slate); font-size: 14px }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px }
+
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); background: var(--white); color: var(--navy); font-weight: 700; padding: 10px 16px; border-radius: 10px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 20 }
+.toast.on { opacity: 1; transform: translate(-50%, 0) }
+@media (prefers-reduced-motion: reduce) { .toast { transition: none } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="hg-mark" viewBox="0 0 75.5 56"><g transform="translate(0 0)"><path d="M0 0H9.5V23.5H30V32.5H9.5V56H0Z"/><path d="M72.3 8.2A28 28 0 1 0 75.5 43.97L68.11 38.84A19 19 0 1 1 65.94 14.56Z"/><path d="M51.5 23.5H75.5V43.97A28 28 0 0 1 66 52.53V32.5H51.5Z"/><path d="M47.5 13.86A15 15 0 0 0 47.5 42.14Z"/></g></symbol><symbol id="hg-stacked" viewBox="0 0 119.29 76.97"><g transform="translate(21.9 0)"><path d="M0 0H9.5V23.5H30V32.5H9.5V56H0Z"/><path d="M72.3 8.2A28 28 0 1 0 75.5 43.97L68.11 38.84A19 19 0 1 1 65.94 14.56Z"/><path d="M51.5 23.5H75.5V43.97A28 28 0 0 1 66 52.53V32.5H51.5Z"/><path d="M47.5 13.86A15 15 0 0 0 47.5 42.14Z"/></g><path transform="translate(0 68) scale(0.93)" d="M8.036571428571428 9.6V0.0H9.81942857142857V9.6ZM1.2891428571428571 9.6V0.0H3.072V9.6ZM2.921142857142857 5.485714285714286V3.9634285714285715H8.173714285714285V5.485714285714286Z M11.862857142857141 9.6 16.18285714285714 0.0H17.938285714285712L22.272 9.6H20.40685714285714L16.690285714285714 0.9462857142857146H17.40342857142857L13.700571428571427 9.6ZM13.85142857142857 7.378285714285714 14.331428571428571 5.979428571428571H19.515428571428572L19.99542857142857 7.378285714285714Z M24.31542857142857 9.6V0.0H28.25142857142857Q30.17142857142857 0.0 31.261714285714284 0.9051428571428572Q32.352 1.8102857142857145 32.352 3.4148571428571426Q32.352 4.470857142857143 31.858285714285714 5.231999999999999Q31.364571428571427 5.993142857142857 30.452571428571424 6.397714285714286Q29.540571428571425 6.8022857142857145 28.265142857142855 6.8022857142857145H25.302857142857142L26.098285714285712 5.993142857142857V9.6ZM30.596571428571426 9.6 28.169142857142855 6.1165714285714285H30.07542857142857L32.516571428571424 9.6ZM26.098285714285712 6.185142857142857 25.302857142857142 5.3348571428571425H28.18285714285714Q29.36228571428571 5.3348571428571425 29.95885714285714 4.827428571428571Q30.55542857142857 4.32 30.55542857142857 3.4148571428571426Q30.55542857142857 2.4960000000000004 29.95885714285714 2.0022857142857147Q29.36228571428571 1.508571428571429 28.18285714285714 1.508571428571429H25.302857142857142L26.098285714285712 0.6308571428571437Z M35.16342857142857 9.6V0.0H36.946285714285715V8.09142857142857H41.965714285714284V9.6Z M44.201142857142855 9.6V0.0H51.20914285714286V1.4948571428571427H45.984V8.105142857142857H51.40114285714286V9.6ZM45.84685714285714 5.458285714285714V3.990857142857143H50.61942857142857V5.458285714285714Z M54.21257142857143 9.6V0.0H55.68L59.87657142857143 7.007999999999999H59.10857142857143L63.23657142857143 0.0H64.70400000000001L64.7177142857143 9.6H63.030857142857144L63.01714285714286 2.646857142857143H63.373714285714286L59.862857142857145 8.502857142857142H59.06742857142857L55.501714285714286 2.646857142857143H55.91314285714286V9.6Z M77.22514285714287 9.737142857142857Q76.10057142857144 9.737142857142857 75.16114285714286 9.373714285714286Q74.2217142857143 9.010285714285715 73.52228571428572 8.345142857142857Q72.82285714285715 7.68 72.43885714285715 6.774857142857143Q72.05485714285714 5.869714285714286 72.05485714285714 4.8Q72.05485714285714 3.7302857142857144 72.43885714285715 2.825142857142857Q72.82285714285715 1.92 73.52914285714286 1.2548571428571424Q74.23542857142859 0.589714285714285 75.18171428571429 0.22628571428571398Q76.12800000000001 -0.137142857142857 77.25257142857143 -0.137142857142857Q78.47314285714286 -0.137142857142857 79.45371428571428 0.2605714285714287Q80.43428571428572 0.6582857142857144 81.10628571428572 1.426285714285715L79.98171428571429 2.523428571428571Q79.41942857142858 1.9611428571428569 78.768 1.693714285714286Q78.11657142857143 1.426285714285715 77.33485714285715 1.426285714285715Q76.58057142857143 1.426285714285715 75.936 1.6731428571428575Q75.29142857142858 1.92 74.82514285714286 2.3725714285714283Q74.35885714285715 2.8251428571428567 74.10514285714287 3.442285714285714Q73.85142857142858 4.059428571428572 73.85142857142858 4.8Q73.85142857142858 5.526857142857143 74.10514285714287 6.144Q74.35885714285715 6.761142857142858 74.82514285714286 7.220571428571429Q75.29142857142858 7.68 75.92228571428572 7.926857142857143Q76.55314285714286 8.173714285714286 77.32114285714286 8.173714285714286Q78.03428571428572 8.173714285714286 78.69942857142857 7.9474285714285715Q79.36457142857144 7.721142857142857 79.968 7.186285714285714L80.98285714285714 8.516571428571428Q80.22857142857143 9.12 79.23428571428572 9.428571428571427Q78.24000000000001 9.737142857142857 77.22514285714287 9.737142857142857ZM80.98285714285714 8.516571428571428 79.296 8.283428571428571V4.690285714285714H80.98285714285714Z M84.15085714285716 9.6V0.0H88.08685714285716Q90.00685714285716 0.0 91.09714285714287 0.9051428571428572Q92.18742857142858 1.8102857142857145 92.18742857142858 3.4148571428571426Q92.18742857142858 4.470857142857143 91.6937142857143 5.231999999999999Q91.20000000000002 5.993142857142857 90.28800000000001 6.397714285714286Q89.37600000000002 6.8022857142857145 88.10057142857144 6.8022857142857145H85.13828571428573L85.9337142857143 5.993142857142857V9.6ZM90.43200000000002 9.6 88.00457142857144 6.1165714285714285H89.91085714285715L92.35200000000002 9.6ZM85.9337142857143 6.185142857142857 85.13828571428573 5.3348571428571425H88.01828571428572Q89.1977142857143 5.3348571428571425 89.79428571428573 4.827428571428571Q90.39085714285716 4.32 90.39085714285716 3.4148571428571426Q90.39085714285716 2.4960000000000004 89.79428571428573 2.0022857142857147Q89.1977142857143 1.508571428571429 88.01828571428572 1.508571428571429H85.13828571428573L85.9337142857143 0.6308571428571437Z M99.49714285714288 9.737142857142857Q98.37257142857145 9.737142857142857 97.42628571428574 9.366857142857143Q96.48000000000002 8.996571428571428 95.78057142857145 8.331428571428571Q95.08114285714286 7.6662857142857135 94.69714285714286 6.768Q94.31314285714286 5.869714285714286 94.31314285714286 4.8Q94.31314285714286 3.7302857142857144 94.69714285714286 2.8320000000000003Q95.08114285714286 1.9337142857142862 95.78057142857145 1.2685714285714287Q96.48000000000002 0.6034285714285712 97.42628571428574 0.2331428571428571Q98.37257142857145 -0.137142857142857 99.48342857142859 -0.137142857142857Q100.60800000000002 -0.137142857142857 101.54742857142858 0.2331428571428571Q102.48685714285716 0.6034285714285712 103.18628571428573 1.2685714285714287Q103.8857142857143 1.9337142857142862 104.2697142857143 2.8320000000000003Q104.6537142857143 3.7302857142857144 104.6537142857143 4.8Q104.6537142857143 5.869714285714286 104.2697142857143 6.774857142857143Q103.8857142857143 7.68 103.18628571428573 8.338285714285714Q102.48685714285716 8.996571428571428 101.54742857142858 9.366857142857143Q100.60800000000002 9.737142857142857 99.49714285714288 9.737142857142857ZM99.48342857142859 8.173714285714286Q100.21028571428573 8.173714285714286 100.82742857142858 7.926857142857143Q101.44457142857144 7.68 101.89714285714287 7.220571428571429Q102.3497142857143 6.761142857142858 102.6034285714286 6.150857142857143Q102.85714285714288 5.540571428571428 102.85714285714288 4.8Q102.85714285714288 4.059428571428572 102.6034285714286 3.4491428571428573Q102.3497142857143 2.838857142857143 101.89714285714287 2.3794285714285714Q101.44457142857144 1.92 100.82742857142858 1.6731428571428575Q100.21028571428573 1.426285714285715 99.48342857142859 1.426285714285715Q98.75657142857145 1.426285714285715 98.14628571428574 1.6731428571428575Q97.53600000000002 1.92 97.07657142857144 2.3794285714285714Q96.61714285714287 2.838857142857143 96.36342857142859 3.4491428571428573Q96.1097142857143 4.059428571428572 96.1097142857143 4.8Q96.1097142857143 5.526857142857143 96.36342857142859 6.144Q96.61714285714287 6.761142857142858 97.0697142857143 7.220571428571429Q97.52228571428573 7.68 98.1394285714286 7.926857142857143Q98.75657142857145 8.173714285714286 99.48342857142859 8.173714285714286Z M111.49714285714288 9.737142857142857Q109.52228571428573 9.737142857142857 108.40457142857144 8.626285714285714Q107.28685714285716 7.515428571428571 107.28685714285716 5.417142857142857V0.0H109.0697142857143V5.348571428571429Q109.0697142857143 6.829714285714285 109.70742857142858 7.501714285714286Q110.34514285714287 8.173714285714286 111.51085714285716 8.173714285714286Q112.67657142857144 8.173714285714286 113.30742857142857 7.501714285714286Q113.93828571428573 6.829714285714285 113.93828571428573 5.348571428571429V0.0H115.6937142857143V5.417142857142857Q115.6937142857143 7.515428571428571 114.57600000000001 8.626285714285714Q113.45828571428572 9.737142857142857 111.49714285714288 9.737142857142857Z M119.01257142857145 9.6V0.0H122.96228571428573Q124.2377142857143 0.0 125.14971428571431 0.4114285714285719Q126.0617142857143 0.8228571428571438 126.55542857142859 1.5908571428571432Q127.04914285714287 2.3588571428571425 127.04914285714287 3.4148571428571426Q127.04914285714287 4.470857142857143 126.55542857142859 5.238857142857142Q126.0617142857143 6.006857142857143 125.14971428571431 6.418285714285714Q124.2377142857143 6.829714285714285 122.96228571428573 6.829714285714285H120.00000000000001L120.79542857142859 5.993142857142857V9.6ZM120.79542857142859 6.185142857142857 120.00000000000001 5.321142857142857H122.88000000000001Q124.05942857142858 5.321142857142857 124.656 4.820571428571428Q125.25257142857144 4.32 125.25257142857144 3.4148571428571426Q125.25257142857144 2.4960000000000004 124.656 2.0022857142857147Q124.05942857142858 1.508571428571429 122.88000000000001 1.508571428571429H120.00000000000001L120.79542857142859 0.6308571428571437Z"/></symbol><symbol id="hg-horizontal" viewBox="0 0 314.94 56"><g transform="translate(0 0)"><path d="M0 0H9.5V23.5H30V32.5H9.5V56H0Z"/><path d="M72.3 8.2A28 28 0 1 0 75.5 43.97L68.11 38.84A19 19 0 1 1 65.94 14.56Z"/><path d="M51.5 23.5H75.5V43.97A28 28 0 0 1 66 52.53V32.5H51.5Z"/><path d="M47.5 13.86A15 15 0 0 0 47.5 42.14Z"/></g><path transform="translate(91.5 19.6)" d="M14.064 16.8V0.0H17.184V16.8ZM2.2560000000000002 16.8V0.0H5.376V16.8ZM5.112 9.600000000000001V6.936H14.304V9.600000000000001Z M20.76 16.8 28.320000000000004 0.0H31.392000000000003L38.976 16.8H35.712L29.208000000000002 1.6560000000000006H30.456000000000003L23.976000000000003 16.8ZM24.240000000000002 12.912 25.080000000000002 10.464H34.152L34.992000000000004 12.912Z M42.55200000000001 16.8V0.0H49.440000000000005Q52.800000000000004 0.0 54.708000000000006 1.5840000000000005Q56.61600000000001 3.168000000000001 56.61600000000001 5.976000000000001Q56.61600000000001 7.824 55.75200000000001 9.155999999999999Q54.888000000000005 10.488 53.292 11.196Q51.696000000000005 11.904 49.464000000000006 11.904H44.28000000000001L45.672000000000004 10.488V16.8ZM53.54400000000001 16.8 49.29600000000001 10.704H52.632000000000005L56.90400000000001 16.8ZM45.672000000000004 10.824000000000002 44.28000000000001 9.336H49.32000000000001Q51.38400000000001 9.336 52.42800000000001 8.448Q53.47200000000001 7.5600000000000005 53.47200000000001 5.976000000000001Q53.47200000000001 4.368 52.42800000000001 3.5040000000000004Q51.38400000000001 2.6400000000000006 49.32000000000001 2.6400000000000006H44.28000000000001L45.672000000000004 1.104000000000001Z M61.53600000000001 16.8V0.0H64.656V14.16H73.44000000000001V16.8Z M77.352 16.8V0.0H89.616V2.6159999999999997H80.47200000000001V14.184000000000001H89.952V16.8ZM80.232 9.552V6.984H88.584V9.552Z M94.87200000000001 16.8V0.0H97.44000000000001L104.78400000000002 12.264H103.44000000000001L110.66400000000002 0.0H113.23200000000001L113.25600000000001 16.8H110.30400000000002L110.28000000000002 4.632H110.90400000000001L104.76000000000002 14.88H103.36800000000001L97.12800000000001 4.632H97.84800000000001V16.8Z M135.14400000000003 17.04Q133.17600000000002 17.04 131.53200000000004 16.404Q129.88800000000003 15.768 128.66400000000004 14.604000000000001Q127.44000000000003 13.440000000000001 126.76800000000003 11.856000000000002Q126.09600000000002 10.272 126.09600000000002 8.4Q126.09600000000002 6.5280000000000005 126.76800000000003 4.944000000000001Q127.44000000000003 3.360000000000001 128.67600000000004 2.1960000000000006Q129.91200000000003 1.032 131.56800000000004 0.3960000000000008Q133.22400000000002 -0.23999999999999844 135.192 -0.23999999999999844Q137.32800000000003 -0.23999999999999844 139.04400000000004 0.4560000000000013Q140.76000000000002 1.152000000000001 141.93600000000004 2.4960000000000004L139.96800000000002 4.416Q138.984 3.4320000000000004 137.844 2.9640000000000004Q136.704 2.4960000000000004 135.336 2.4960000000000004Q134.01600000000002 2.4960000000000004 132.88800000000003 2.928000000000001Q131.76000000000002 3.360000000000001 130.94400000000002 4.152000000000001Q130.12800000000001 4.944000000000001 129.68400000000003 6.024000000000001Q129.24 7.104000000000001 129.24 8.4Q129.24 9.672 129.68400000000003 10.752Q130.12800000000001 11.832 130.94400000000002 12.636000000000001Q131.76000000000002 13.440000000000001 132.86400000000003 13.872Q133.96800000000002 14.304 135.312 14.304Q136.56000000000003 14.304 137.72400000000005 13.908000000000001Q138.88800000000003 13.512 139.94400000000002 12.576L141.72000000000003 14.904Q140.40000000000003 15.96 138.66000000000003 16.5Q136.92000000000002 17.04 135.14400000000003 17.04ZM141.72000000000003 14.904 138.76800000000003 14.496V8.208H141.72000000000003Z M147.264 16.8V0.0H154.15200000000002Q157.512 0.0 159.42000000000002 1.5840000000000005Q161.328 3.168000000000001 161.328 5.976000000000001Q161.328 7.824 160.464 9.155999999999999Q159.60000000000002 10.488 158.00400000000002 11.196Q156.40800000000002 11.904 154.17600000000002 11.904H148.99200000000002L150.38400000000001 10.488V16.8ZM158.256 16.8 154.008 10.704H157.34400000000002L161.616 16.8ZM150.38400000000001 10.824000000000002 148.99200000000002 9.336H154.032Q156.096 9.336 157.14 8.448Q158.184 7.5600000000000005 158.184 5.976000000000001Q158.184 4.368 157.14 3.5040000000000004Q156.096 2.6400000000000006 154.032 2.6400000000000006H148.99200000000002L150.38400000000001 1.104000000000001Z M174.12 17.04Q172.15200000000002 17.04 170.49600000000004 16.392Q168.84000000000003 15.744 167.61600000000004 14.58Q166.39200000000002 13.416 165.72000000000003 11.844000000000001Q165.04800000000003 10.272 165.04800000000003 8.4Q165.04800000000003 6.5280000000000005 165.72000000000003 4.956Q166.39200000000002 3.3840000000000003 167.61600000000004 2.2200000000000006Q168.84000000000003 1.056000000000001 170.49600000000004 0.40800000000000125Q172.15200000000002 -0.23999999999999844 174.09600000000003 -0.23999999999999844Q176.06400000000002 -0.23999999999999844 177.70800000000003 0.40800000000000125Q179.35200000000003 1.056000000000001 180.57600000000002 2.2200000000000006Q181.8 3.3840000000000003 182.472 4.956Q183.144 6.5280000000000005 183.144 8.4Q183.144 10.272 182.472 11.856000000000002Q181.8 13.440000000000001 180.57600000000002 14.592Q179.35200000000003 15.744 177.70800000000003 16.392Q176.06400000000002 17.04 174.12 17.04ZM174.09600000000003 14.304Q175.36800000000002 14.304 176.44800000000004 13.872Q177.52800000000002 13.440000000000001 178.32000000000002 12.636000000000001Q179.11200000000002 11.832 179.55600000000004 10.764000000000001Q180.00000000000003 9.696000000000002 180.00000000000003 8.4Q180.00000000000003 7.104000000000001 179.55600000000004 6.0360000000000005Q179.11200000000002 4.968 178.32000000000002 4.164000000000001Q177.52800000000002 3.360000000000001 176.44800000000004 2.928000000000001Q175.36800000000002 2.4960000000000004 174.09600000000003 2.4960000000000004Q172.824 2.4960000000000004 171.75600000000003 2.928000000000001Q170.68800000000002 3.360000000000001 169.88400000000001 4.164000000000001Q169.08 4.968 168.63600000000002 6.0360000000000005Q168.192 7.104000000000001 168.192 8.4Q168.192 9.672 168.63600000000002 10.752Q169.08 11.832 169.872 12.636000000000001Q170.66400000000002 13.440000000000001 171.74400000000003 13.872Q172.824 14.304 174.09600000000003 14.304Z M195.12 17.04Q191.66400000000002 17.04 189.70800000000003 15.096Q187.752 13.152000000000001 187.752 9.48V0.0H190.872V9.36Q190.872 11.952000000000002 191.988 13.128Q193.104 14.304 195.144 14.304Q197.18400000000003 14.304 198.288 13.128Q199.39200000000002 11.952000000000002 199.39200000000002 9.36V0.0H202.46400000000003V9.48Q202.46400000000003 13.152000000000001 200.50800000000004 15.096Q198.55200000000002 17.04 195.12 17.04Z M208.27200000000002 16.8V0.0H215.18400000000003Q217.41600000000003 0.0 219.01200000000003 0.7200000000000006Q220.60800000000003 1.4400000000000013 221.47200000000004 2.7840000000000007Q222.336 4.128 222.336 5.976000000000001Q222.336 7.824 221.47200000000004 9.168Q220.60800000000003 10.512 219.01200000000003 11.232000000000001Q217.41600000000003 11.952000000000002 215.18400000000003 11.952000000000002H210.00000000000003L211.39200000000002 10.488V16.8ZM211.39200000000002 10.824000000000002 210.00000000000003 9.312000000000001H215.04000000000002Q217.104 9.312000000000001 218.14800000000002 8.436Q219.192 7.5600000000000005 219.192 5.976000000000001Q219.192 4.368 218.14800000000002 3.5040000000000004Q217.104 2.6400000000000006 215.04000000000002 2.6400000000000006H210.00000000000003L211.39200000000002 1.104000000000001Z"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M16 3v4M8 3v4M3.5 10h17"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M15.5 15h2.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.1-7-11.6a7 7 0 0 1 14 0c0 5.5-7 11.6-7 11.6z"/><circle cx="12" cy="9.8" r="2.6"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 4.5 14h7l-1 7.5 9-11.5h-7l1-7.5z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.6a8.6 8.6 0 0 1-12.7 7.6L3 20.8l1.6-5.1A8.6 8.6 0 1 1 21 11.6z"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M20.5 7.5 12 3 3.5 7.5v9L12 21l8.5-4.5v-9z"/><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9M7.8 5.2l8.4 4.6"/></symbol>
+  <symbol id="i-van" viewBox="0 0 24 24"><path d="M2.5 6.5h11v10h-11zM13.5 9.5h4l3.5 3.8v3.2h-7.5"/><circle cx="6.5" cy="17.5" r="1.9"/><circle cx="17" cy="17.5" r="1.9"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.8 4.5 5.8v5.7c0 4.9 3.3 8.3 7.5 9.7 4.2-1.4 7.5-4.8 7.5-9.7V5.8L12 2.8z"/><path d="m8.8 12 2.2 2.2 4.3-4.4"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><circle cx="8.5" cy="11" r="2.2"/><path d="M5.3 16.2c.7-1.5 1.8-2.1 3.2-2.1s2.5.6 3.2 2.1M14.5 10h4M14.5 13.5h3"/></symbol>
+  <symbol id="i-passport" viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2"/><circle cx="12" cy="10" r="3.2"/><path d="M9 17h6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6.5 9.5 17 4 11.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18.5" r="2.5"/><circle cx="18" cy="5.5" r="2.5"/><path d="M8.5 18.5h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7h7"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.3-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M15.5 4.7a3.5 3.5 0 0 1 0 6.6M18 14.8c2 .7 3.2 2.4 3.6 5.2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+
+  <!-- Delivery van, side profile facing right. 400 x 190 -->
+  <symbol id="van" viewBox="0 0 400 190">
+    <ellipse cx="215" cy="176" rx="185" ry="9" fill="#081B33"/>
+    <path fill="#FFFFFF" d="M58 32q0-14 14-14h220q9 0 15 7l42 50q4 5 11 6l15 3q12 3 12 15v38q0 12-12 12H72q-14 0-14-14z"/>
+    <path fill="#0C2543" d="M312 32l33 40q2 3-2 3h-31z"/>
+    <path stroke="#48A0CA" stroke-width="4" stroke-linecap="round" fill="none" d="M318 42l20 25"/>
+    <path stroke="#C9D6E6" stroke-width="2.5" fill="none" d="M190 30v120M306 30v120"/>
+    <path stroke="#8FA3BC" stroke-width="4" stroke-linecap="round" fill="none" d="M168 92h12M282 92h12"/>
+    <rect x="58" y="112" width="328" height="11" fill="#C6F432"/>
+    <rect x="52" y="34" width="8" height="26" rx="2" fill="#F2545B"/>
+    <rect x="376" y="96" width="14" height="9" rx="2.5" fill="#5FCFFA"/>
+    <rect x="368" y="144" width="26" height="17" rx="4" fill="#8FA3BC"/>
+    <g>
+      <circle cx="122" cy="156" r="36" fill="#0C2543"/>
+      <circle cx="122" cy="156" r="27" fill="#081B33" stroke="#2B4D78" stroke-width="4"/>
+      <circle cx="122" cy="156" r="10" fill="#C9D6E6"/>
+      <circle cx="122" cy="156" r="3.5" fill="#0C2543"/>
+    </g>
+    <g>
+      <circle cx="320" cy="156" r="36" fill="#0C2543"/>
+      <circle cx="320" cy="156" r="27" fill="#081B33" stroke="#2B4D78" stroke-width="4"/>
+      <circle cx="320" cy="156" r="10" fill="#C9D6E6"/>
+      <circle cx="320" cy="156" r="3.5" fill="#0C2543"/>
+    </g>
+  </symbol>
+
+  <!-- Van on a 15-degree road with speed lines. 640 x 260 -->
+  <symbol id="van-scene" viewBox="0 0 640 260">
+    <path fill="#13335A" d="M70 10H640L585 250H15z"/>
+    <path stroke="#2D6991" stroke-width="7" d="M128 10 73 250"/>
+    <path stroke="#5FCFFA" stroke-width="5" stroke-linecap="round" stroke-dasharray="28 22" d="M60 238H600"/>
+    <g stroke-linecap="round" stroke-width="9">
+      <path stroke="#C6F432" d="M108 62h108"/>
+      <path stroke="#5FCFFA" d="M160 96h58"/>
+      <path stroke="#C6F432" d="M92 130h126"/>
+      <path stroke="#A0ADBD" d="M150 164h68"/>
+      <path stroke="#5FCFFA" d="M176 198h44"/>
+    </g>
+    <use href="#van" x="214" y="28" width="400" height="190"/>
+  </symbol>
+</svg>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="mast-top">
+      <svg viewBox="0 0 314.94 56" fill="currentColor" role="img" aria-label="Harlem Group"><use href="#hg-horizontal"/></svg>
+      <div class="mast-meta"><span class="pill">Brand board</span><span>v1.0 · November 2026</span></div>
+    </div>
+    <div class="thesis">
+      <h1>Navy ground. <span class="l">Hi-vis lime</span> for the money. <span class="s">Sky blue</span> for the way in.</h1>
+      <p>The look and voice behind the Harlem Group "Drivers wanted" posters, written down so every poster, post and web page looks like it came from the same depot. Click any hex code to copy it.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ======================= LOGO ======================= -->
+<section id="logo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Logo</span>
+      <h2>The H drives straight into the G.</h2>
+      <p>The H's right-hand stem sits inside the G, cut off by a thin gap. Use the files in <code>assets/img/</code>. They were redrawn as vectors from the poster, so swap in your original artwork if you have it.</p>
+    </div>
+    <div class="grid">
+      <div class="panel s5">
+        <div class="stage on-navy">
+          <div class="clear">
+            <span class="x t">X</span><span class="x l">X</span>
+            <svg viewBox="0 0 119.29 76.97" fill="currentColor" role="img" aria-label="Harlem Group stacked logo"><use href="#hg-stacked"/></svg>
+          </div>
+        </div>
+        <p class="cap"><b>Primary · stacked.</b> Posters, print, social avatars. Keep clear space of X on every side, where X is a third of the mark's height. Nothing else goes inside the dashed line.</p>
+      </div>
+      <div class="panel s7">
+        <div class="stage on-night" style="min-height:160px">
+          <svg class="lockup-h" viewBox="0 0 314.94 56" fill="currentColor" role="img" aria-label="Harlem Group horizontal logo"><use href="#hg-horizontal"/></svg>
+        </div>
+        <p class="cap"><b>Horizontal.</b> Website header, email signatures and anywhere short and wide. New for the website, built from the same mark and wordmark.</p>
+        <div class="marks">
+          <div class="stage on-lime"><svg viewBox="0 0 75.5 56" fill="currentColor" role="img" aria-label="Mark on lime"><use href="#hg-mark"/></svg></div>
+          <div class="stage on-white"><svg viewBox="0 0 75.5 56" fill="currentColor" role="img" aria-label="Mark on white"><use href="#hg-mark"/></svg></div>
+          <div class="stage on-navy" style="outline:1px solid var(--line)"><svg viewBox="0 0 75.5 56" fill="currentColor" role="img" aria-label="Mark on navy"><use href="#hg-mark"/></svg></div>
+        </div>
+        <p class="cap"><b>Mark only.</b> WhatsApp profile picture, favicon, van livery. Use navy on lime or white, and white on navy.</p>
+      </div>
+      <div class="panel s5">
+        <div class="sizes">
+          <figure><svg width="32" height="24" viewBox="0 0 75.5 56" fill="currentColor" aria-hidden="true"><use href="#hg-mark"/></svg>24 px</figure>
+          <figure><svg width="43" height="32" viewBox="0 0 75.5 56" fill="currentColor" aria-hidden="true"><use href="#hg-mark"/></svg>32 px</figure>
+          <figure><svg width="65" height="48" viewBox="0 0 75.5 56" fill="currentColor" aria-hidden="true"><use href="#hg-mark"/></svg>48 px</figure>
+          <figure><svg width="96" height="62" viewBox="0 0 119.29 76.97" fill="currentColor" aria-hidden="true"><use href="#hg-stacked"/></svg>96 px wide</figure>
+        </div>
+        <p class="cap"><b>Minimum sizes.</b> Mark: 24 px tall on screen, 8 mm in print. Stacked lockup: 96 px wide, or 25 mm in print, so the wordmark stays readable.</p>
+      </div>
+      <div class="panel s7">
+        <div class="donts">
+          <div class="dont">
+            <div class="stage on-lime"><svg viewBox="0 0 75.5 56" fill="#FFFFFF" aria-hidden="true"><use href="#hg-mark"/></svg></div>
+            <p><span class="no"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg></span>No white logo on lime or sky. It drops to 1.3:1 contrast.</p>
+          </div>
+          <div class="dont">
+            <div class="stage on-navy" style="outline:1px solid var(--line)"><svg viewBox="0 0 75.5 56" fill="#C6F432" aria-hidden="true"><use href="#hg-mark"/></svg></div>
+            <p><span class="no"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg></span>No lime logo. Lime is kept for pay figures.</p>
+          </div>
+          <div class="dont">
+            <div class="stage on-navy" style="outline:1px solid var(--line)"><svg viewBox="0 0 75.5 56" fill="currentColor" style="transform:scaleX(1.6)" aria-hidden="true"><use href="#hg-mark"/></svg></div>
+            <p><span class="no"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg></span>No stretching, outlines or shadows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= COLOUR ======================= -->
+<section id="colour">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Colour</span>
+      <h2>Twelve colours, each with a job.</h2>
+      <p>These are the exact values sampled from the poster. Lime always means money or emphasis. Sky always means "this is how you get in touch". If a colour has no job on the page, leave it out.</p>
+    </div>
+
+    <div class="group-label"><h3>Core</h3><span>These four carry the brand.</span></div>
+    <div class="swatches">
+      <div class="sw" style="--c:#0C2543;--on:#FFFFFF"><div class="chip">Aa</div><div class="body"><span class="name">Depot Navy</span><div class="vals"><button class="hex" data-copy="#0C2543">#0C2543</button>RGB 12 37 67</div><p class="role">The ground for everything. Backgrounds, poster fields, the website.</p><code>--hg-navy</code></div></div>
+      <div class="sw" style="--c:#C6F432;--on:#0C2543"><div class="chip">£200</div><div class="body"><span class="name">Hi-Vis Lime</span><div class="vals"><button class="hex" data-copy="#C6F432">#C6F432</button>RGB 198 244 50</div><p class="role">Money and emphasis. Pay figures, the pay banner, table headers, step numbers, the van's stripe.</p><code>--hg-lime</code></div></div>
+      <div class="sw" style="--c:#5FCFFA;--on:#0C2543"><div class="chip">Apply</div><div class="body"><span class="name">Signal Sky</span><div class="vals"><button class="hex" data-copy="#5FCFFA">#5FCFFA</button>RGB 95 207 250</div><p class="role">Action and contact. The WhatsApp panel, buttons, links, info strips.</p><code>--hg-sky</code></div></div>
+      <div class="sw" style="--c:#FFFFFF;--on:#0C2543"><div class="chip">Aa</div><div class="body"><span class="name">Van White</span><div class="vals"><button class="hex" data-copy="#FFFFFF">#FFFFFF</button>RGB 255 255 255</div><p class="role">Headlines, the logo and the van. Body text uses Mist instead.</p><code>--hg-white</code></div></div>
+    </div>
+
+    <div class="group-label"><h3>Support navies</h3><span>Build depth without adding new hues.</span></div>
+    <div class="swatches small">
+      <div class="sw" style="--c:#081B33;--on:#FFFFFF"><div class="chip">80p</div><div class="body"><span class="name">Night Run</span><div class="vals"><button class="hex" data-copy="#081B33">#081B33</button>RGB 8 27 51</div><p class="role">Price column, footers, shadows.</p><code>--hg-night</code></div></div>
+      <div class="sw" style="--c:#102F52;--on:#FFFFFF"><div class="chip">Aa</div><div class="body"><span class="name">Route Navy</span><div class="vals"><button class="hex" data-copy="#102F52">#102F52</button>RGB 16 47 82</div><p class="role">Diagonal background panels, alternate table rows. The poster's #0F2C4F rows round to this.</p><code>--hg-route</code></div></div>
+      <div class="sw" style="--c:#13335A;--on:#FFFFFF"><div class="chip">Aa</div><div class="body"><span class="name">Lane Blue</span><div class="vals"><button class="hex" data-copy="#13335A">#13335A</button>RGB 19 51 90</div><p class="role">Icon tiles, cards, table rows, the road.</p><code>--hg-lane</code></div></div>
+      <div class="sw" style="--c:#2B4D78;--on:#FFFFFF"><div class="chip">Aa</div><div class="body"><span class="name">Kerb Line</span><div class="vals"><button class="hex" data-copy="#2B4D78">#2B4D78</button>RGB 43 77 120</div><p class="role">Borders, dividers, wheel rims. Never use it for text.</p><code>--hg-line</code></div></div>
+    </div>
+
+    <div class="group-label"><h3>Text tones and signal</h3><span>Cool greys tinted toward the navy.</span></div>
+    <div class="swatches small">
+      <div class="sw" style="--c:#C9D6E6;--on:#0C2543"><div class="chip">Aa</div><div class="body"><span class="name">Mist</span><div class="vals"><button class="hex" data-copy="#C9D6E6">#C9D6E6</button>RGB 201 214 230</div><p class="role">Body copy and subheadings on navy.</p><code>--hg-mist</code></div></div>
+      <div class="sw" style="--c:#A9BCD3;--on:#0C2543"><div class="chip">Aa</div><div class="body"><span class="name">Slate</span><div class="vals"><button class="hex" data-copy="#A9BCD3">#A9BCD3</button>RGB 169 188 211</div><p class="role">Captions, footnotes, small print.</p><code>--hg-slate</code></div></div>
+      <div class="sw" style="--c:#8FA3BC;--on:#0C2543"><div class="chip">Aa</div><div class="body"><span class="name">Steel</span><div class="vals"><button class="hex" data-copy="#8FA3BC">#8FA3BC</button>RGB 143 163 188</div><p class="role">Arrows, disabled states, the van's bumper.</p><code>--hg-steel</code></div></div>
+      <div class="sw" style="--c:#F2545B;--on:#0C2543"><div class="chip">!</div><div class="body"><span class="name">Brake Light</span><div class="vals"><button class="hex" data-copy="#F2545B">#F2545B</button>RGB 242 84 91</div><p class="role">Errors and warnings only, plus the van's tail-light. Never decoration.</p><code>--hg-brake</code></div></div>
+    </div>
+
+    <div class="group-label"><h3>How much of each</h3><span>Roughly, across a poster or a page.</span></div>
+    <div class="ratio" role="img" aria-label="Proportions: Depot Navy 55%, support navies 20%, Hi-Vis Lime 12%, Signal Sky 8%, white 5%">
+      <div style="flex:55;background:#0C2543;color:#C9D6E6">Navy 55%</div>
+      <div style="flex:20;background:#13335A;color:#C9D6E6">Support 20%</div>
+      <div style="flex:12;background:#C6F432;color:#0C2543">Lime 12%</div>
+      <div style="flex:8;background:#5FCFFA;color:#0C2543">Sky 8%</div>
+      <div style="flex:5;background:#FFFFFF;color:#0C2543">5%</div>
+    </div>
+
+    <div class="group-label"><h3>Safe pairings</h3><span>WCAG 2.2 contrast. AA needs 4.5:1 for body text.</span></div>
+    <div class="contrast">
+      <div class="pair" style="--bg:#0C2543;--fg:#FFFFFF"><span class="aa">Aa</span><span class="meta">White on Navy<span class="badge">15.4 AAA</span></span></div>
+      <div class="pair" style="--bg:#0C2543;--fg:#C6F432"><span class="aa">Aa</span><span class="meta">Lime on Navy<span class="badge">12.0 AAA</span></span></div>
+      <div class="pair" style="--bg:#C6F432;--fg:#0C2543"><span class="aa">Aa</span><span class="meta">Navy on Lime<span class="badge">12.0 AAA</span></span></div>
+      <div class="pair" style="--bg:#5FCFFA;--fg:#0C2543"><span class="aa">Aa</span><span class="meta">Navy on Sky<span class="badge">8.7 AAA</span></span></div>
+      <div class="pair" style="--bg:#0C2543;--fg:#C9D6E6"><span class="aa">Aa</span><span class="meta">Mist on Navy<span class="badge">10.5 AAA</span></span></div>
+      <div class="pair" style="--bg:#0C2543;--fg:#A9BCD3"><span class="aa">Aa</span><span class="meta">Slate on Navy<span class="badge">8.0 AAA</span></span></div>
+      <div class="pair" style="--bg:#13335A;--fg:#C6F432"><span class="aa">Aa</span><span class="meta">Lime on Lane<span class="badge">9.9 AAA</span></span></div>
+      <div class="pair" style="--bg:#0C2543;--fg:#8FA3BC"><span class="aa">Aa</span><span class="meta">Steel on Navy<span class="badge">6.0 AA</span></span></div>
+      <div class="pair" style="--bg:#5FCFFA;--fg:#FFFFFF"><span class="aa">Aa</span><span class="meta">White on Sky<span class="badge fail">1.8 Fail</span></span></div>
+      <div class="pair" style="--bg:#C6F432;--fg:#FFFFFF"><span class="aa">Aa</span><span class="meta">White on Lime<span class="badge fail">1.3 Fail</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= TYPE ======================= -->
+<section id="type">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Typography</span>
+      <h2>One family, set heavy and tight.</h2>
+      <p>Inter is free on Google Fonts and works in Canva, Figma, Word and on the web. Set headlines in ExtraBold or Black with negative tracking, and body copy in Regular. Montserrat SemiBold appears only in the logo's wordmark, which is already converted to outlines.</p>
+    </div>
+    <div class="grid">
+      <div class="panel night s4">
+        <div class="specimen">
+          <span class="label">Inter</span>
+          <span class="big">Ag</span>
+        </div>
+        <div class="weights"><span style="font-weight:400">Regular</span><span style="font-weight:500">Medium</span><span style="font-weight:600">SemiBold</span><span style="font-weight:700">Bold</span><span style="font-weight:800">ExtraBold</span><span style="font-weight:900">Black</span></div>
+        <p class="cap">Fallback stack: system-ui, Segoe UI, Roboto, Arial. On the web, use tabular figures for prices so the columns line up.</p>
+      </div>
+      <div class="panel s8">
+        <div class="scale">
+          <div class="row"><div class="spec"><b>Display</b>Black 900 · 96/86 · −5%</div><div class="t-display">£200</div></div>
+          <div class="row"><div class="spec"><b>Headline</b>ExtraBold 800 · 56/56 · −3.5% · caps</div><div class="t-h1">Earn up to £200 a day</div></div>
+          <div class="row"><div class="spec"><b>Heading 2</b>ExtraBold 800 · 36/40 · −2.5%</div><div class="t-h2">Permanent routes, Monday to Saturday</div></div>
+          <div class="row"><div class="spec"><b>Heading 3</b>Bold 700 · 22/28 · −1%</div><div class="t-h3">All routes start at our Leeds depot</div></div>
+          <div class="row"><div class="spec"><b>Body</b>Regular 400 · 17/26 · Mist</div><p class="t-body">You need a car or SWB van and hire &amp; reward insurance. You're self-employed and paid weekly, at 80p per parcel on most routes.</p></div>
+          <div class="row"><div class="spec"><b>Label</b>Bold 700 · 13 · +14% · caps</div><div class="t-label">Mon–Sat routes · Per parcel</div></div>
+          <div class="row"><div class="spec"><b>Figures</b>ExtraBold 800 · tabular</div><div class="t-fig"><span>80p</span><span class="l">£1.00</span><span>07548 547193</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= GRAPHICS ======================= -->
+<section id="graphics">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Graphic language</span>
+      <h2>Everything leans forward.</h2>
+      <p>The pay banner, the road and the background panels all share one 15° lean, so the design reads as movement. Keep to that one angle and don't add others.</p>
+    </div>
+    <div class="grid">
+      <div class="panel s5">
+        <div class="lean-demo">
+          <div class="banner"><b>£75–£200 per day</b><span>Paid at 80p per parcel</span></div>
+          <div class="angle">
+            <svg width="54" height="54" viewBox="0 0 54 54" aria-hidden="true"><path d="M8 48H48" stroke="#2B4D78" stroke-width="2"/><path d="M20 48 32 4" stroke="#C6F432" stroke-width="3" stroke-linecap="round"/><path d="M20 48V8" stroke="#2B4D78" stroke-width="2" stroke-dasharray="3 3"/><path d="M20 26a22 22 0 0 1 6-1" stroke="#5FCFFA" stroke-width="2" fill="none"/></svg>
+            <span><b style="color:var(--white)">The 15° lean.</b> Slant the trailing edge of banners and panels at 15° from vertical. In CSS, use <code>skewX(-15deg)</code> or a clip-path.</span>
+          </div>
+          <div class="bgdemo" aria-hidden="true"><span></span></div>
+          <p class="cap"><b>Background panel.</b> One Route Navy panel leaning in from the top right, behind the headline or the van. One per layout.</p>
+        </div>
+      </div>
+      <div class="panel night s7">
+        <svg class="scene" viewBox="0 0 640 260" role="img" aria-label="White delivery van with a hi-vis lime stripe on a slanted road, with speed lines behind it"><use href="#van-scene"/></svg>
+        <p class="cap"><b>Van and speed lines.</b> A white van with a lime stripe, red tail-light and sky headlight, on a Lane Blue road with a sky dashed line. The speed lines are rounded bars in lime, sky and steel, with ragged left ends and aligned right ends.</p>
+      </div>
+      <div class="panel s5">
+        <p class="hivis">You need a <b>car or SWB van</b> and <u>hire &amp; reward insurance</u>.</p>
+        <p class="cap"><b>Hi-vis underline.</b> A 4 px lime underline marks the one requirement people must not miss. Use it once per piece.</p>
+      </div>
+      <div class="panel s7">
+        <div class="icons">
+          <figure><span class="tile"><svg aria-hidden="true"><use href="#i-calendar"/></svg></span>Routes</figure>
+          <figure><span class="tile"><svg aria-hidden="true"><use href="#i-wallet"/></svg></span>Pay</figure>
+          <figure><span class="tile"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>Postcodes</figure>
+          <figure><span class="tile"><svg aria-hidden="true"><use href="#i-bolt"/></svg></span>Start</figure>
+          <figure><span class="tile"><svg aria-hidden="true"><use href="#i-chat"/></svg></span>WhatsApp</figure>
+          <figure><span class="tile"><svg aria-hidden="true"><use href="#i-box"/></svg></span>Parcels</figure>
+          <figure><span class="tile"><svg aria-hidden="true"><use href="#i-van"/></svg></span>Vehicle</figure>
+          <figure><span class="tile"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>Insurance</figure>
+          <figure><span class="tile"><svg aria-hidden="true"><use href="#i-id"/></svg></span>Licence</figure>
+          <figure><span class="tile"><svg aria-hidden="true"><use href="#i-route"/></svg></span>Coverage</figure>
+        </div>
+        <p class="cap"><b>Icons.</b> 24 px line icons with a 1.8 px stroke and rounded ends, in lime on a 12 px-radius navy tile. Never fill them, and never use emoji in their place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= COMPONENTS ======================= -->
+<section id="components">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Components</span>
+      <h2>The poster's parts, ready for the web.</h2>
+      <p>The website is built from the same pieces, so a driver who saw the poster recognises the site straight away.</p>
+    </div>
+    <div class="grid">
+      <div class="panel s6">
+        <span class="pill" style="align-self:flex-start">Drivers wanted</span>
+        <div class="btns">
+          <a class="btn sky" href="https://wa.me/447548547193" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp to apply</a>
+          <span class="btn ghost">See routes &amp; pay</span>
+          <span class="btn sky small">Ask about this route</span>
+        </div>
+        <p class="cap"><b>Badge and buttons.</b> Outline pill for the eyebrow. Sky buttons for anything that opens WhatsApp or email. Ghost buttons (with a Kerb Line border) for moving around the page. There are no lime buttons, because lime marks money.</p>
+      </div>
+      <div class="panel s6">
+        <div class="steps">
+          <span><span class="n">1</span>WhatsApp us</span><svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          <span><span class="n">2</span>Fill in application packs</span><svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          <span><span class="n">3</span>Start driving</span>
+        </div>
+        <p class="cap"><b>Steps.</b> Lime number discs with steel arrows. Only use numbers when the order really matters.</p>
+        <div class="benefits">
+          <div class="benefit"><span class="tile"><svg aria-hidden="true"><use href="#i-calendar"/></svg></span><div><b>Permanent routes</b><span>Monday to Saturday</span></div></div>
+          <div class="benefit"><span class="tile"><svg aria-hidden="true"><use href="#i-wallet"/></svg></span><div><b>Paid weekly</b><span>Self-employed</span></div></div>
+        </div>
+      </div>
+      <div class="panel night s6">
+        <div class="rtable">
+          <div class="head"><span>Mon–Sat routes</span><span>Per parcel</span></div>
+          <div class="r"><span><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>Leeds</span><span>80p</span></div>
+          <div class="r"><span><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>Halifax</span><span>80p</span></div>
+          <div class="r"><span><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>York</span><span class="up">£1.00</span></div>
+          <div class="foot"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>All routes start at our Leeds depot</div>
+        </div>
+        <p class="cap"><b>Route table.</b> A lime header, alternating Route and Lane rows, and prices in a Night Run column. Rates above 80p are set in lime.</p>
+      </div>
+      <div class="panel night s6">
+        <div class="cta">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chat"/></svg>
+          <div><small>WhatsApp to apply</small><b>07548 547193</b></div>
+        </div>
+        <p class="cap"><b>Contact panel.</b> Sky with navy text and a 24 px radius. Every poster and page ends with one. Always write the number in full; don't use a QR code on its own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= VOICE ======================= -->
+<section id="voice">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Voice</span>
+      <h2>Say the number. Say it plainly.</h2>
+      <p>Drivers read the poster in a few seconds, often on a phone. Lead with the pay, the place and the next step, and write the way people talk at the depot.</p>
+    </div>
+    <div class="principles">
+      <div class="panel"><h3>Numbers first</h3><p>£200, 80p, Mon–Sat, Leeds. Facts drivers can check beat adjectives.</p></div>
+      <div class="panel"><h3>Short lines</h3><p>Aim for one idea per line and fewer than ten words per line.</p></div>
+      <div class="panel"><h3>Straight about the deal</h3><p>Say "self-employed", give the pay range as well as the top figure, and say what drivers need before they start.</p></div>
+      <div class="panel"><h3>One next step</h3><p>Every piece ends with WhatsApp and the number. Don't offer competing calls to action.</p></div>
+    </div>
+    <div class="grid" style="margin-top:16px">
+      <div class="panel night s7">
+        <div class="dodont">
+          <div class="dd"><div class="do"><span class="yes"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span>£75–£200 per day. Paid weekly.</div><div class="dn"><span class="no"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg></span>Competitive earnings potential</div></div>
+          <div class="dd"><div class="do"><span class="yes"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span>You need a car or SWB van.</div><div class="dn"><span class="no"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg></span>Applicants must possess suitable transport</div></div>
+          <div class="dd"><div class="do"><span class="yes"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span>WhatsApp us on 07548 547193.</div><div class="dn"><span class="no"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg></span>Reach out to our team today!!</div></div>
+          <div class="dd"><div class="do"><span class="yes"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span>Got an LWB van? Message us.</div><div class="dn"><span class="no"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg></span>Got a LWB van?</div></div>
+        </div>
+      </div>
+      <div class="panel s5">
+        <span class="label">House style</span>
+        <dl class="house">
+          <div><dt>Pence rates</dt><dd><b>80p</b>, not £0.80</dd></div>
+          <div><dt>Pound rates</dt><dd><b>£1.00</b>, which matches the 80p column</dd></div>
+          <div><dt>Ranges</dt><dd><b>£75–£200</b> with an en dash and no spaces</dd></div>
+          <div><dt>Days</dt><dd><b>Mon–Sat</b> in labels, "Monday to Saturday" in sentences</dd></div>
+          <div><dt>Phone</dt><dd><b>07548 547193</b>, always in full, split 5 + 6</dd></div>
+          <div><dt>Vehicles</dt><dd><b>SWB van</b>, <b>LWB van</b> ("an LWB van")</dd></div>
+          <div><dt>Insurance</dt><dd><b>hire &amp; reward insurance</b>, lower case with an ampersand</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FORMATS ======================= -->
+<section id="formats">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Formats</span>
+      <h2>Three sizes cover every channel.</h2>
+      <p>Keep the logo, pay, routes and number inside the dashed safe area, which is about 7% in from each edge, so platform overlays don't cover them.</p>
+    </div>
+    <div class="formats">
+      <div class="fmt"><div class="frame" style="width:225px;height:150px">3:2</div><div><b>Landscape 1500 × 1000</b><span>Facebook and LinkedIn feeds, noticeboards, email</span></div></div>
+      <div class="fmt"><div class="frame" style="width:120px;height:150px">4:5</div><div><b>Portrait 1080 × 1350</b><span>Instagram and Facebook feeds</span></div></div>
+      <div class="fmt"><div class="frame" style="width:96px;height:171px">9:16</div><div><b>Story 1080 × 1920</b><span>WhatsApp Status, Instagram and Facebook Stories</span></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Harlem Group brand board · v1.0 · November 2026</span>
+    <span>Logo files: <code>assets/img/</code> · Website colours: <code>assets/css/styles.css</code></span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var toast = document.getElementById('toast'), t;
+  function show(msg) { toast.textContent = msg; toast.classList.add('on'); clearTimeout(t); t = setTimeout(function () { toast.classList.remove('on'); }, 1800); }
+  function selectText(el) { try { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {} }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-copy]'); if (!b) return;
+    var v = b.getAttribute('data-copy');
+    try {
+      navigator.clipboard.writeText(v).then(function () { show('Copied ' + v); }, function () { selectText(b); show('Press Ctrl+C to copy ' + v); });
+    } catch (err) { selectText(b); show('Press Ctrl+C to copy ' + v); }
+  });
+})();
+</script>
+</body>
+</html>
