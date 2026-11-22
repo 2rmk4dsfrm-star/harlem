@@ -47,7 +47,7 @@ Before launch, work through the checklist in `docs/site-plan.md`. Search the cod
 | Colour | Hex | Job |
 | --- | --- | --- |
 | Depot Navy | `#0C2543` | Background |
-| Hi-Vis Lime | `#C6F432` | Money and emphasis |
+| Hi-Vis Lime | `#C6F432` | Money only (pay figures and rates) |
 | Signal Sky | `#5FCFFA` | Action and contact |
 | Van White | `#FFFFFF` | Headlines, logo |
 | Night Run | `#081B33` | Deepest panels |

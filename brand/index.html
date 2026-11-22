@@ -6,6 +6,7 @@
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Harlem Group Brand Board</title>
+<meta name="robots" content="noindex">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Logo, colour hex codes, typography, components and voice for the Harlem Group brand.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +22,7 @@
   --route: #102F52;  /* Route Navy  - diagonal panels, alt rows */
   --lane: #13335A;   /* Lane Blue   - tiles, cards, table rows */
   --line: #2B4D78;   /* Kerb Line   - borders, dividers */
-  --lime: #C6F432;   /* Hi-Vis Lime - money + emphasis */
+  --lime: #C6F432;   /* Hi-Vis Lime - money only */
   --sky: #5FCFFA;    /* Signal Sky  - action + contact */
   --white: #FFFFFF;
   --mist: #C9D6E6;   /* secondary text */
@@ -37,7 +38,7 @@ body { background: var(--navy); color: var(--white); font-family: var(--font); f
 @media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)) } }
 h1, h2, h3 { margin: 0; text-wrap: balance; letter-spacing: -0.02em }
 p { margin: 0 }
-.label { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--lime) }
+.label { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--slate) }
 .muted { color: var(--slate) }
 code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px; color: var(--mist); background: var(--night); padding: 2px 6px; border-radius: 6px }
 :focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 6px }
@@ -49,7 +50,7 @@ code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-si
 .mast-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px }
 .mast-top svg { width: 230px; height: auto; color: var(--white) }
 .mast-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 14px; color: var(--mist) }
-.pill { display: inline-flex; align-items: center; height: 34px; padding: 0 16px; border: 2px solid var(--lime); border-radius: 999px; color: var(--lime); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase }
+.pill { display: inline-flex; align-items: center; height: 34px; padding: 0 16px; border: 2px solid var(--white); border-radius: 999px; color: var(--white); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase }
 .thesis { margin-top: 56px; display: grid; gap: 20px; max-width: 900px }
 .thesis h1 { font-size: clamp(34px, 5.6vw, 64px); line-height: 1.02; font-weight: 800; letter-spacing: -0.035em }
 .thesis h1 .l { color: var(--lime) }
@@ -140,7 +141,7 @@ section { padding-block: 64px; border-bottom: 1px solid var(--line) }
 .t-h2 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.1; font-weight: 800; letter-spacing: -0.025em }
 .t-h3 { font-size: 22px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em }
 .t-body { font-size: 17px; line-height: 1.55; color: var(--mist); max-width: 60ch }
-.t-label { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--lime) }
+.t-label { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--slate) }
 .t-fig { font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; display: flex; flex-wrap: wrap; gap: 4px 22px }
 .t-fig .l { color: var(--lime) }
 
@@ -157,10 +158,10 @@ section { padding-block: 64px; border-bottom: 1px solid var(--line) }
 .scene { width: 100%; height: auto; display: block }
 .hivis { font-size: clamp(20px, 2.4vw, 26px); color: var(--mist); line-height: 1.5 }
 .hivis b { color: var(--white) }
-.hivis u { text-decoration: none; color: var(--white); font-weight: 700; box-shadow: inset 0 -4px 0 var(--lime); padding-bottom: 2px }
+.hivis u { text-decoration: none; color: var(--white); font-weight: 700; box-shadow: inset 0 -4px 0 var(--sky); padding-bottom: 2px }
 .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 12px }
 .icons figure { margin: 0; display: grid; justify-items: center; gap: 6px; font-size: 11.5px; color: var(--slate) }
-.tile { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 12px; background: var(--route); color: var(--lime) }
+.tile { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 12px; background: var(--route); color: var(--sky) }
 .tile svg, .ic { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round }
 
 /* ---------- Components ---------- */
@@ -175,10 +176,10 @@ section { padding-block: 64px; border-bottom: 1px solid var(--line) }
 .benefit b { display: block; font-size: 18px; font-weight: 700 }
 .benefit span { color: var(--mist); font-size: 15px }
 .benefits { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)) }
-.rtable { border: 2px solid var(--lime); border-radius: var(--r-md); overflow: hidden; font-variant-numeric: tabular-nums }
+.rtable { border: 2px solid var(--line); border-radius: var(--r-md); overflow: hidden; font-variant-numeric: tabular-nums }
 .rtable .head, .rtable .r { display: grid; grid-template-columns: minmax(0, 1fr) 128px }
 .rtable .head span { white-space: nowrap }
-.rtable .head { background: var(--lime); color: var(--navy); font-size: 12.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase }
+.rtable .head { background: var(--night); color: var(--slate); font-size: 12.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase }
 .rtable .head span { padding: 10px 16px }
 .rtable .head span:last-child { text-align: right }
 .rtable .r span { padding: 10px 16px; font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 10px }
@@ -186,11 +187,11 @@ section { padding-block: 64px; border-bottom: 1px solid var(--line) }
 .rtable .r:nth-child(odd) { background: var(--route) }
 .rtable .r span:last-child { background: var(--night); justify-content: flex-end; font-weight: 800; font-size: 20px }
 .rtable .r .up { color: var(--lime) }
-.rtable .pin { width: 16px; height: 16px; color: var(--lime); fill: none; stroke: currentColor; stroke-width: 2.4 }
+.rtable .pin { width: 16px; height: 16px; color: var(--steel); fill: none; stroke: currentColor; stroke-width: 2.4 }
 .rtable .foot { background: var(--sky); color: var(--navy); padding: 10px 16px; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 10px }
 .rtable .foot svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2 }
 .steps { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-weight: 600; font-size: 18px }
-.steps .n { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--lime); color: var(--navy); font-weight: 800; font-size: 16px; margin-right: 8px }
+.steps .n { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--mist); color: var(--white); font-weight: 800; font-size: 16px; margin-right: 8px }
 .steps .ar { width: 18px; height: 18px; color: var(--steel); fill: none; stroke: currentColor; stroke-width: 2 }
 .cta { background: var(--sky); color: var(--navy); border-radius: var(--r-lg); padding: clamp(16px, 4vw, 22px) clamp(16px, 4vw, 26px); display: flex; align-items: center; gap: clamp(10px, 3vw, 18px) }
 .cta small { font-size: clamp(11px, 3vw, 14px) }
@@ -376,13 +377,13 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="sec-head">
       <span class="label">Colour</span>
       <h2>Twelve colours, each with a job.</h2>
-      <p>These are the exact values sampled from the poster. Lime always means money or emphasis. Sky always means "this is how you get in touch". If a colour has no job on the page, leave it out.</p>
+      <p>These are the exact values sampled from the poster. Lime always means money. Sky always means "this is how you get in touch". If a colour has no job on the page, leave it out.</p>
     </div>
 
     <div class="group-label"><h3>Core</h3><span>These four carry the brand.</span></div>
     <div class="swatches">
       <div class="sw" style="--c:#0C2543;--on:#FFFFFF"><div class="chip">Aa</div><div class="body"><span class="name">Depot Navy</span><div class="vals"><button class="hex" data-copy="#0C2543">#0C2543</button>RGB 12 37 67</div><p class="role">The ground for everything. Backgrounds, poster fields, the website.</p><code>--hg-navy</code></div></div>
-      <div class="sw" style="--c:#C6F432;--on:#0C2543"><div class="chip">£200</div><div class="body"><span class="name">Hi-Vis Lime</span><div class="vals"><button class="hex" data-copy="#C6F432">#C6F432</button>RGB 198 244 50</div><p class="role">Money and emphasis. Pay figures, the pay banner, table headers, step numbers, the van's stripe.</p><code>--hg-lime</code></div></div>
+      <div class="sw" style="--c:#C6F432;--on:#0C2543"><div class="chip">£200</div><div class="body"><span class="name">Hi-Vis Lime</span><div class="vals"><button class="hex" data-copy="#C6F432">#C6F432</button>RGB 198 244 50</div><p class="role">Money only. Pay figures, rates, the pay banner, the van's stripe.</p><code>--hg-lime</code></div></div>
       <div class="sw" style="--c:#5FCFFA;--on:#0C2543"><div class="chip">Apply</div><div class="body"><span class="name">Signal Sky</span><div class="vals"><button class="hex" data-copy="#5FCFFA">#5FCFFA</button>RGB 95 207 250</div><p class="role">Action and contact. The WhatsApp panel, buttons, links, info strips.</p><code>--hg-sky</code></div></div>
       <div class="sw" style="--c:#FFFFFF;--on:#0C2543"><div class="chip">Aa</div><div class="body"><span class="name">Van White</span><div class="vals"><button class="hex" data-copy="#FFFFFF">#FFFFFF</button>RGB 255 255 255</div><p class="role">Headlines, the logo and the van. Body text uses Mist instead.</p><code>--hg-white</code></div></div>
     </div>
