@@ -78,7 +78,8 @@
       parcels.style.setProperty('--fill', fill.toFixed(1) + '%');
 
       if (cta) {
-        cta.href = waLink("Hi Harlem Group, I'd like to apply to drive. I'm interested in a " + rateLabel(rate) + ' route.');
+        var article = rate < 1 ? 'an ' : 'a '; // "an 80p route", "a £1.00 route"
+        cta.href = waLink("Hi Harlem Group, I'd like to apply to drive. I'm interested in " + article + rateLabel(rate) + ' route.\nVehicle: \nTown: ');
       }
     };
     form.addEventListener('input', update);
@@ -94,13 +95,16 @@
   var heroVisible = true, applyVisible = false;
 
   var syncBar = function () {
-    if (bar) bar.classList.toggle('show', !heroVisible && !applyVisible);
+    var on = !heroVisible && !applyVisible;
+    if (bar) bar.classList.toggle('show', on);
+    document.body.classList.toggle('bar-on', on);
   };
   if ('IntersectionObserver' in window) {
     if (hero) new IntersectionObserver(function (entries) { heroVisible = entries[0].isIntersecting; syncBar(); }).observe(hero);
     if (apply) new IntersectionObserver(function (entries) { applyVisible = entries[0].isIntersecting; syncBar(); }).observe(apply);
   } else if (bar) {
     bar.classList.add('show');
+    document.body.classList.add('bar-on');
   }
   var onScroll = function () { if (header) header.classList.toggle('scrolled', window.scrollY > 8); };
   window.addEventListener('scroll', onScroll, { passive: true });

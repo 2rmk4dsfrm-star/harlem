@@ -24,10 +24,10 @@ The site is a single scrolling page. Everything a driver needs fits on one page,
 | 4 | How to apply (`#requirements`) | Remove doubt before they message | What you need (vehicle, hire & reward insurance, licence, right to work, experience) + the 3 steps | Start step 1 on WhatsApp |
 | 5 | FAQ (`#faq`) | Answer objections | 9 questions: self-employment, pay, pay day, vehicle, insurance, depot, days, experience, start date | Ask us on WhatsApp |
 | 6 | For businesses (`#business`) | Win capacity work | Route coverage, driver supply, LWB / larger loads | Email enquiries |
-| 7 | Apply (`#apply`) | Final push | 3 steps, big WhatsApp number panel, LWB footnote | WhatsApp to apply |
+| 7 | Apply (`#apply`) | Final push | Big WhatsApp number panel, pay footnote | WhatsApp to apply |
 | — | Footer | Trust + legal | Stacked logo, links, contact, registered company details | — |
 
-On phones, a sticky **WhatsApp to apply** bar appears once the hero buttons scroll off-screen and hides again at the final panel.
+On phones, a sticky **WhatsApp to apply** bar appears once the hero buttons scroll off-screen and hides again at the final panel. While it shows, the header WhatsApp button hides, so there is only one on screen.
 
 ## 3. Calls to action and WhatsApp messages
 
@@ -35,10 +35,10 @@ Every driver button opens WhatsApp on **07548 547193** with a message already ty
 
 | Button | Pre-filled message |
 | --- | --- |
-| Header, hero, steps, final panel, mobile bar | "Hi Harlem Group, I'd like to apply to drive. My vehicle is a (car / SWB van) and I live in (town)." |
+| Header, hero, steps, final panel, mobile bar | "Hi Harlem Group, I'd like to apply to drive." then a "Vehicle:" line and a "Town:" line for the driver to fill in |
 | Route "Ask" buttons | "Hi, I'm interested in the Bradford route (80p per parcel)." (one per route) |
 | LWB van links | "Hi, I have an LWB van and I'd like to hear about other routes." |
-| Calculator | "Hi Harlem Group, I'd like to apply to drive. I'm interested in an 80p route." (follows the rate picked) |
+| Calculator | "Hi Harlem Group, I'd like to apply to drive. I'm interested in an 80p route." plus the Vehicle and Town lines (follows the rate picked) |
 | FAQ | "Hi Harlem Group, I have a question about driving with you:" |
 | Businesses | Email to `enquiries@example.com` (placeholder), subject "Delivery capacity enquiry" |
 
