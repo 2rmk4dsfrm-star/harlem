@@ -87,7 +87,7 @@ The messages live in the `data-wa` attribute of each link in `index.html`, so yo
 
 ## 8. Phase 2 ideas
 
-- Real photos of the depot, vans and drivers to sit beside the illustration
+- Real photos of the depot, vans and drivers: four slots are in place with stand-in illustrations (see README, "Photos")
 - Short driver quotes (with permission)
 - A separate `/business` page if enquiries grow, with case studies and coverage maps
 - A short online form as a second route in, for drivers who don't want to message first
