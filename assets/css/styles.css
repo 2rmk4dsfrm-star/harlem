@@ -171,13 +171,23 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px }
 .hero-note { color: var(--hg-slate); font-size: 15px }
 .hero-note a { display: inline-flex; align-items: center; min-height: 44px; color: var(--hg-white); font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: .01em; text-underline-offset: 3px }
-.hero-art svg { width: 100%; height: auto }
-@media (max-width: 959px) { .hero-art { margin-inline: -8px } }
+
 
 .benefits { margin-top: 48px; display: grid; gap: 20px 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)) }
 .benefits li { display: flex; gap: 14px; align-items: center }
 .benefits b { display: block; font-size: 18px; font-weight: 700 }
 .benefits span { color: var(--hg-mist); font-size: 15px }
+
+/* ---------- Photos ----------
+   Each slot holds one image, full width, with no text on top.
+   Stand-in illustrations live in assets/img/photos/*.svg. To use a real photo,
+   save it next to them as a .jpg (about 1280px wide, about 150KB) and change
+   the img src. Add the "real" class to the figure to get the navy tint. */
+.photo { position: relative; margin: 0 0 28px; border-radius: var(--r-md); overflow: hidden; background: var(--hg-route) }
+.photo img { display: block; width: 100%; height: auto }
+.photo.real::after { content: ""; position: absolute; inset: 0; background: rgba(12, 37, 67, .15); pointer-events: none }
+.hero-art.photo { margin: 0 }
+@media (min-width: 960px) { .photo-wide img { aspect-ratio: 3 / 1; object-fit: cover } }
 
 /* ---------- Sections ---------- */
 .section { padding-block: 80px; border-bottom: 1px solid var(--hg-line) }

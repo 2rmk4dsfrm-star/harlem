@@ -59,46 +59,6 @@
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
 
-  <!-- Delivery van, side profile facing right. 400 x 190 -->
-  <symbol id="van" viewBox="0 0 400 190">
-    <ellipse cx="215" cy="176" rx="185" ry="9" fill="#081B33"/>
-    <path fill="#FFFFFF" d="M58 32q0-14 14-14h220q9 0 15 7l42 50q4 5 11 6l15 3q12 3 12 15v38q0 12-12 12H72q-14 0-14-14z"/>
-    <path fill="#0C2543" d="M312 32l33 40q2 3-2 3h-31z"/>
-    <path stroke="#48A0CA" stroke-width="4" stroke-linecap="round" fill="none" d="M318 42l20 25"/>
-    <path stroke="#C9D6E6" stroke-width="2.5" fill="none" d="M190 30v120M306 30v120"/>
-    <path stroke="#8FA3BC" stroke-width="4" stroke-linecap="round" fill="none" d="M168 92h12M282 92h12"/>
-    <rect x="58" y="112" width="328" height="11" fill="#C6F432"/>
-    <rect x="52" y="34" width="8" height="26" rx="2" fill="#F2545B"/>
-    <rect x="376" y="96" width="14" height="9" rx="2.5" fill="#5FCFFA"/>
-    <rect x="368" y="144" width="26" height="17" rx="4" fill="#8FA3BC"/>
-    <g>
-      <circle cx="122" cy="156" r="36" fill="#0C2543"/>
-      <circle cx="122" cy="156" r="27" fill="#081B33" stroke="#2B4D78" stroke-width="4"/>
-      <circle cx="122" cy="156" r="10" fill="#C9D6E6"/>
-      <circle cx="122" cy="156" r="3.5" fill="#0C2543"/>
-    </g>
-    <g>
-      <circle cx="320" cy="156" r="36" fill="#0C2543"/>
-      <circle cx="320" cy="156" r="27" fill="#081B33" stroke="#2B4D78" stroke-width="4"/>
-      <circle cx="320" cy="156" r="10" fill="#C9D6E6"/>
-      <circle cx="320" cy="156" r="3.5" fill="#0C2543"/>
-    </g>
-  </symbol>
-
-  <!-- Van on a 15-degree road with speed lines. 640 x 260 -->
-  <symbol id="van-scene" viewBox="0 0 640 260">
-    <path fill="#13335A" d="M70 10H640L585 250H15z"/>
-    <path stroke="#2D6991" stroke-width="7" d="M128 10 73 250"/>
-    <path stroke="#5FCFFA" stroke-width="5" stroke-linecap="round" stroke-dasharray="28 22" d="M60 238H600"/>
-    <g stroke-linecap="round" stroke-width="9">
-      <path stroke="#C6F432" d="M108 62h108"/>
-      <path stroke="#5FCFFA" d="M160 96h58"/>
-      <path stroke="#C6F432" d="M92 130h126"/>
-      <path stroke="#A0ADBD" d="M150 164h68"/>
-      <path stroke="#5FCFFA" d="M176 198h44"/>
-    </g>
-    <use href="#van" x="214" y="28" width="400" height="190"/>
-  </symbol>
 </svg>
 
 <header class="site-header" id="top">
@@ -142,9 +102,10 @@
       </div>
       <p class="hero-note">Or save the number: <a href="https://wa.me/447548547193" data-wa="Hi Harlem Group, I'd like to apply to drive.&#10;Vehicle: &#10;Town: " target="_blank" rel="noopener">07548 547193</a></p>
     </div>
-    <div class="hero-art">
-      <svg viewBox="0 0 640 260" role="img" aria-label="White delivery van with a hi-vis lime stripe driving along a road"><use href="#van-scene"/></svg>
-    </div>
+    <!-- PHOTO SLOT 1: stand-in illustration until the real photo is taken (see README, "Photos") -->
+    <figure class="photo hero-art">
+      <img src="assets/img/photos/depot-van.svg" width="640" height="360" alt="Harlem Group van loading parcels at the Leeds depot">
+    </figure>
   </div>
   <div class="wrap">
     <ul class="benefits" aria-label="Why drive with Harlem Group">
@@ -163,6 +124,10 @@
       <span class="label">Routes &amp; pay</span>
       <h2 id="routes-h">Seven routes. One depot.</h2>
     </div>
+    <!-- PHOTO SLOT 2 -->
+    <figure class="photo photo-wide">
+      <img src="assets/img/photos/loading-bay.svg" width="640" height="300" alt="Parcels on the conveyor and in cages at the Leeds depot loading bay" loading="lazy" decoding="async">
+    </figure>
     <div class="routes-grid">
       <div class="route-table-wrap">
         <table class="rtable">
@@ -278,6 +243,10 @@
     <div class="req-grid">
       <div class="req">
         <h3>What you need</h3>
+        <!-- PHOTO SLOT 3 -->
+        <figure class="photo">
+          <img src="assets/img/photos/car-boot.svg" width="640" height="320" alt="Car boot packed with parcels, ready for a multi-drop route" loading="lazy" decoding="async">
+        </figure>
         <ul class="checklist">
           <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-van"/></svg></span><div><b>A car or SWB van</b><span>Your own vehicle.</span></div></li>
           <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span><div><b><u class="hivis">Hire &amp; reward insurance</u></b><span>Standard car or van insurance doesn't cover you to deliver parcels for payment.</span></div></li>
@@ -356,6 +325,10 @@
       <h2 id="biz-h">Delivery capacity across West and North Yorkshire.</h2>
       <p>Harlem Group supplies self-employed multi-drop drivers to carriers and retailers, working from our Leeds depot.</p>
     </div>
+    <!-- PHOTO SLOT 4 -->
+    <figure class="photo photo-wide">
+      <img src="assets/img/photos/vans-row.svg" width="640" height="300" alt="Row of Harlem Group vans parked at the Leeds depot" loading="lazy" decoding="async">
+    </figure>
     <div class="biz-grid">
       <article class="biz-card">
         <span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg></span>
