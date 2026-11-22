@@ -76,5 +76,7 @@ Keep one photo per slot, with no text on top and no slideshows.
 | Slate | `#A9BCD3` | Captions |
 | Steel | `#8FA3BC` | Muted details |
 | Brake Light | `#F2545B` | Errors only |
+| Label White | `#F1F5F9` | Light section background (Routes, How to apply, For businesses) |
+| Ink | `#3D5573` | Body text on light sections |
 
 Typeface: **Inter** (Google Fonts). The logo wordmark uses Montserrat SemiBold, already converted to outlines in the SVG files.

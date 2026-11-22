@@ -25,6 +25,11 @@
   --hg-steel: #8FA3BC;  /* arrows, disabled */
   --hg-brake: #F2545B;  /* errors only */
 
+  /* Light sections (alternate with navy) */
+  --hg-paper: #F1F5F9;  /* Label White - light section ground */
+  --hg-ink2:  #3D5573;  /* body copy on light */
+  --hg-rule:  #D3DDE8;  /* borders on light */
+
   /* Type */
   --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
@@ -196,6 +201,24 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .sec-head h2 { font-size: clamp(32px, 4.6vw, 52px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.04 }
 .sec-head p { color: var(--hg-mist); font-size: 18px; max-width: 60ch }
 
+/* ---------- Light sections ----------
+   Routes, How to apply and For businesses sit on light grey to break up the navy.
+   Money stays on navy panels (route table, steps card) so lime keeps its contrast.
+   Sky blue is too faint as text on light, so links turn navy with a sky underline;
+   sky buttons stay as they are. */
+.section.light { background: var(--hg-paper); color: var(--hg-navy); border-bottom: 0 }
+.section.light::before { display: none }
+.light .label { color: var(--hg-ink2) }
+.light .sec-head p, .light .checklist div > span, .light .biz-card p, .light .biz-cta p, .light .note-card p { color: var(--hg-ink2) }
+.light .text-link, .light .checklist a, .light .note-card a { color: var(--hg-navy); text-decoration: underline; text-decoration-color: var(--hg-sky); text-decoration-thickness: 3px; text-underline-offset: 5px }
+.light .text-link .ic { display: none }
+.light .tile, .light .note-card .tile, .light .biz-card .tile { background: var(--hg-navy); color: var(--hg-sky) }
+.light .note-card, .light .biz-card { background: var(--hg-white); border: 1px solid var(--hg-rule) }
+.light .biz-cta { background: var(--hg-white); border-color: var(--hg-rule) }
+.light .biz-cta b { color: var(--hg-navy) }
+.light .route-table-wrap { border-color: var(--hg-navy); color: var(--hg-white) }
+.light .steps-card { background: var(--hg-navy); color: var(--hg-white) }
+
 /* ---------- Routes ---------- */
 .routes-grid { display: grid; gap: 24px; align-items: start }
 @media (min-width: 960px) { .routes-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px } }
@@ -323,6 +346,7 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 3px solid var
 .biz-card p { color: var(--hg-mist); font-size: 16px }
 .biz-cta { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 28px; padding: 24px 28px; border: 2px solid var(--hg-line); border-radius: var(--r-md) }
 .biz-cta p { color: var(--hg-mist); max-width: 56ch }
+.biz-cta .btn { max-width: 100%; overflow-wrap: anywhere }
 .biz-cta b { color: var(--hg-white) }
 
 /* ---------- Final CTA ---------- */
