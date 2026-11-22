@@ -9,11 +9,11 @@ _November 2026_
 | Turn poster and social traffic into WhatsApp chats with drivers | Self-employed multi-drop drivers around Leeds | WhatsApp chats started from the site |
 | Give carriers and retailers a way to ask about delivery capacity | Depot managers, carriers, retailers | Enquiry emails received |
 
-Drivers come first. Most arrive on a phone from a Facebook post, WhatsApp Status or a printed poster, and want four answers fast: **how much, where, what do I need, how do I apply**. Businesses get a section of their own further down the page.
+Drivers come first. Most arrive on a phone from a Facebook post, WhatsApp Status or a printed poster, and want four answers fast: **how much, where, what do I need, how do I apply**. Businesses get a page of their own at `/business/`.
 
 ## 2. Structure
 
-The site is a single scrolling page. Everything a driver needs fits on one page, and a single URL is easy to put on posters and in WhatsApp.
+The site has two pages. The home page is for drivers: everything a driver needs fits on it, and its single URL is easy to put on posters and in WhatsApp. Businesses have their own page at `/business/`, linked from the driver menu, a one-line strip above the footer, and the footer.
 
 | # | Section (anchor) | Job | Key content | Primary action |
 |---|---|---|---|---|
@@ -24,10 +24,14 @@ The site is a single scrolling page. Everything a driver needs fits on one page,
 | 4 | How to apply (`#requirements`) | Remove doubt before they message | What you need (vehicle, hire & reward insurance, licence, right to work, experience) + the 3 steps | None (header button / bottom bar) |
 | 5 | FAQ (`#faq`) | Answer objections | 9 questions: self-employment, pay, pay day, vehicle, insurance, depot, days, experience, start date | Ask us on WhatsApp |
 | 6 | Apply (`#apply`) | Final push for drivers | Big WhatsApp number panel | WhatsApp to apply |
-| 7 | For businesses (`#business`) | Win capacity work | Route coverage, driver supply, LWB / larger loads | Email us |
+| 7 | Businesses link | Send business readers to their page | "Need drivers for your routes? See our business page" | Link to `/business/` |
 | — | Footer | Trust + legal | Stacked logo, links, contact, registered company details | — |
 
-On phones, a sticky **WhatsApp to apply** bar is the only WhatsApp button for drivers. It shows from the top of the page and hides once the final panel is on screen or scrolled past, so business readers don't see it. While it shows, the header WhatsApp button and the hero button are hidden, so there is only one on screen. On phones every photo is cropped to a short 5:2 strip.
+### Business page (`/business/`)
+
+Header: logo (to the driver page) and "Driving for us?". No menu. Sections: headline + Call / Email, van photo, numbers strip, coverage map and town list, what we do (permanent routes, absence and peak cover, LWB), driver checks, who we work with, enquiry panel. On phones a **Call | Email** bar replaces the driver WhatsApp bar and hides at the enquiry panel. Dummy values are in [square brackets] with a dashed outline (`class="ph"`) until real figures go in.
+
+On the driver page on phones, a sticky **WhatsApp to apply** bar is the only WhatsApp button for drivers. It shows from the top of the page and hides once the final panel is on screen or scrolled past, so business readers don't see it. While it shows, the header WhatsApp button and the hero button are hidden, so there is only one on screen. On phones every photo is cropped to a short 5:2 strip.
 
 ## 3. Calls to action and WhatsApp messages
 

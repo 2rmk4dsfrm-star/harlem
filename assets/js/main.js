@@ -86,21 +86,20 @@
   // top of the page and hides once the big apply panel is on screen or passed.
   var header = document.querySelector('.site-header');
   var bar = document.querySelector('.mobile-bar');
-  var apply = document.getElementById('apply');
+  // Driver page: the apply panel. Business page: the enquiry panel.
+  var apply = document.getElementById('apply') || document.getElementById('enquire');
 
   var setBar = function (on) {
     if (bar) bar.classList.toggle('show', on);
     document.body.classList.toggle('bar-on', on);
   };
-  if (apply && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      var e = entries[0];
-      setBar(!(e.isIntersecting || e.boundingClientRect.top < 0));
-    }).observe(apply);
-  } else {
-    setBar(true);
-  }
-  var onScroll = function () { if (header) header.classList.toggle('scrolled', window.scrollY > 8); };
+  // Checked on every scroll (not with an IntersectionObserver) so a jump past
+  // the panel, e.g. from a footer link, still hides the bar.
+  var onScroll = function () {
+    if (header) header.classList.toggle('scrolled', window.scrollY > 8);
+    setBar(!apply || apply.getBoundingClientRect().top > window.innerHeight);
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
   onScroll();
 })();

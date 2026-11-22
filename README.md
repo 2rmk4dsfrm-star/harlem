@@ -40,7 +40,8 @@ Before launch, work through the checklist in `docs/site-plan.md`. Search the cod
 | A pre-filled WhatsApp message | The `data-wa="…"` text on that link in `index.html` |
 | The WhatsApp number | `WHATSAPP_NUMBER` in `assets/js/main.js`, then find and replace `447548547193` and `07548 547193` in `index.html` |
 | Colours | The `--hg-*` tokens at the top of `assets/css/styles.css` (keep them in step with the brand board) |
-| The business email | Search for `enquiries@example.com` |
+| The business email | Search for `enquiries@example.com` (in `index.html` and `business/index.html`) |
+| Business page dummy values | In `business/index.html`, search for `class="ph"`. Each one is in [square brackets] with a dashed outline. Put the real value in and remove the span, or delete the line |
 
 ## Photos
 
@@ -51,12 +52,12 @@ The page has four photo slots. Each one holds a brand-style stand-in illustratio
 | 1 | Top of the page, under the buttons | `assets/img/photos/depot-van.svg` | A van loading at the depot |
 | 2 | Routes, under the heading | `assets/img/photos/loading-bay.svg` | The loading bay in the morning, cages and parcels |
 | 3 | What you need | `assets/img/photos/car-boot.svg` | A car boot full of parcels |
-| 4 | For businesses | `assets/img/photos/vans-row.svg` | A row of vans, or the team at the depot |
+| 4 | Business page (`business/index.html`), under the headline | `assets/img/photos/vans-row.svg` | A row of vans, or the team at the depot |
 
 To swap in a real photo:
 1. Blur number plates, parcel labels and anyone who hasn't agreed to be shown, and keep client logos out of shot.
 2. Strip location data, resize to about 1280px wide (landscape) and save as JPEG at about 150KB, e.g. `assets/img/photos/depot-van.jpg`.
-3. In `index.html`, search for `PHOTO SLOT`, change the `img` `src` (and `width`/`height` to the photo's), and add `real` to the figure's class for the light navy tint.
+3. In `index.html` (or `business/index.html` for slot 4), search for `PHOTO SLOT`, change the `img` `src` (and `width`/`height` to the photo's), and add `real` to the figure's class for the light navy tint.
 
 Keep one photo per slot, with no text on top and no slideshows.
 

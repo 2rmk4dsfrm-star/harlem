@@ -196,7 +196,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .section { padding-block: 80px; border-bottom: 1px solid var(--hg-line) }
 @media (max-width: 720px) { .section { padding-block: 56px } }
 .sec-head { display: grid; gap: 12px; max-width: 760px; margin-bottom: 40px }
-.sec-head h2 { font-size: clamp(32px, 4.6vw, 52px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.04 }
+.sec-head h1, .sec-head h2 { font-size: clamp(32px, 4.6vw, 52px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.04 }
 .sec-head p { color: var(--hg-mist); font-size: 18px; max-width: 60ch }
 
 /* ---------- Routes ---------- */
@@ -316,18 +316,48 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 3px solid var
 .faq summary:hover { color: var(--hg-sky) }
 .faq details p { color: var(--hg-mist); padding: 0 40px 22px 2px; max-width: 65ch }
 
-/* ---------- Business ---------- */
-.business { background: var(--hg-night); position: relative; overflow: hidden }
-.business::before { content: ""; position: absolute; top: 0; bottom: 0; left: -22%; width: 44%; background: var(--hg-navy); transform: skewX(calc(-1 * var(--lean))); transform-origin: bottom left; pointer-events: none }
-.business > * { position: relative }
+/* ---------- Business cards (business page) ---------- */
 .biz-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) }
 .biz-card { background: var(--hg-lane); border-radius: var(--r-md); padding: 28px; display: grid; gap: 12px; align-content: start }
 .biz-card .tile { background: var(--hg-route); color: var(--hg-sky) }
 .biz-card h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-top: 6px }
 .biz-card p { color: var(--hg-mist); font-size: 16px }
-.biz-cta { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 28px; padding: 24px 28px; border: 2px solid var(--hg-line); border-radius: var(--r-md) }
-.biz-cta p { color: var(--hg-mist); max-width: 56ch }
-.biz-cta b { color: var(--hg-white) }
+
+/* Driver page: one line pointing businesses to their page */
+.biz-link { padding-block: 28px; border-bottom: 1px solid var(--hg-line) }
+.biz-link p { color: var(--hg-mist); font-size: 17px }
+.biz-link b { color: var(--hg-white) }
+
+/* ---------- Business page ---------- */
+/* Placeholder text: dashed outline so dummy values can't be missed. Remove the span when the real value goes in. */
+.ph { outline: 2px dashed currentColor; outline-offset: 1px; border-radius: 4px; padding: 0 4px; opacity: .85 }
+.switch-link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; color: var(--hg-sky); font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap }
+.switch-link .ic { width: 18px; height: 18px; stroke-width: 2.2 }
+.biz-page .header-cta { margin-left: auto }
+.biz-hero { padding-block: 48px 56px }
+.biz-hero .sec-head { margin-bottom: 28px }
+.biz-hero-cta { margin-bottom: 0 }
+.stats { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)) }
+@media (min-width: 900px) { .stats { grid-template-columns: repeat(4, minmax(0, 1fr)) } }
+.stats li { background: var(--hg-lane); border-radius: var(--r-md); padding: 20px; display: grid; gap: 6px; align-content: start }
+.stats b { font-size: clamp(30px, 6vw, 48px); font-weight: 900; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums }
+.stats span { color: var(--hg-mist); font-size: 16px; line-height: 1.35 }
+#numbers { padding-block: 40px }
+.cov-grid { display: grid; gap: 24px; align-items: start }
+@media (min-width: 960px) { .cov-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 32px } }
+.map.map-all { display: grid }
+.cov-list { display: grid; gap: 16px }
+.town-list { border: 2px solid var(--hg-line); border-radius: var(--r-md); overflow: hidden }
+.town-list li { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px; padding: 13px 18px; background: var(--hg-route) }
+.town-list li:nth-child(even) { background: var(--hg-lane) }
+.town-list .ic { width: 18px; height: 18px; color: var(--hg-steel); stroke-width: 2.4 }
+.town-list b { font-size: 19px; font-weight: 700; min-width: 7.5em }
+.town-list .ph { color: var(--hg-slate); font-size: 15px }
+.enq-panel { background: var(--hg-lane); border-radius: var(--r-lg); padding: clamp(24px, 4vw, 40px); display: grid; gap: 14px; justify-items: start }
+.enq-panel h2 { font-size: clamp(30px, 4.6vw, 48px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.04 }
+.enq-panel p { color: var(--hg-mist); font-size: 18px; max-width: 56ch }
+.enq-panel .cta-row { margin-top: 8px }
+.enq-panel .btn.ghost { overflow-wrap: anywhere }
 
 /* ---------- Final CTA ---------- */
 .apply { padding-block: 72px }
@@ -368,7 +398,11 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 3px solid var
   .header-cta .btn { transition: opacity .2s ease }
   body.bar-on .header-cta .btn { opacity: 0; visibility: hidden }
   .mobile-bar .btn { width: 100% }
+  /* Business page: Call and Email side by side */
+  .biz-bar { display: flex; gap: 10px }
+  .biz-bar .btn { flex: 1 1 0; padding: 0 12px }
   /* Phones: the bottom bar is the WhatsApp button, so the hero doesn't repeat it */
   .hero-wa { display: none }
+  .biz-hero-cta { display: none }
   .site-footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)) }
 }
