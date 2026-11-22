@@ -52,7 +52,6 @@
     var outWeek = document.getElementById('out-week');
     var outHelp = document.getElementById('out-help');
     var mark = document.getElementById('meter-mark');
-    var cta = document.getElementById('calc-cta');
 
     var checked = function (name) {
       var el = form.querySelector('input[name="' + name + '"]:checked');
@@ -76,11 +75,6 @@
       mark.style.left = pct.toFixed(2) + '%';
       var fill = ((n - parcels.min) / (parcels.max - parcels.min)) * 100;
       parcels.style.setProperty('--fill', fill.toFixed(1) + '%');
-
-      if (cta) {
-        var article = rate < 1 ? 'an ' : 'a '; // "an 80p route", "a £1.00 route"
-        cta.href = waLink("Hi Harlem Group, I'd like to apply to drive. I'm interested in " + article + rateLabel(rate) + ' route.\nVehicle: \nTown: ');
-      }
     };
     form.addEventListener('input', update);
     form.addEventListener('change', update);
@@ -88,23 +82,23 @@
   }
 
   // 4. Header border + mobile apply bar ----------------------------------------
+  // On phones the bottom bar is the main WhatsApp button. It shows from the
+  // top of the page and hides once the big apply panel is on screen or passed.
   var header = document.querySelector('.site-header');
   var bar = document.querySelector('.mobile-bar');
-  var hero = document.querySelector('.hero .cta-row');
   var apply = document.getElementById('apply');
-  var heroVisible = true, applyVisible = false;
 
-  var syncBar = function () {
-    var on = !heroVisible && !applyVisible;
+  var setBar = function (on) {
     if (bar) bar.classList.toggle('show', on);
     document.body.classList.toggle('bar-on', on);
   };
-  if ('IntersectionObserver' in window) {
-    if (hero) new IntersectionObserver(function (entries) { heroVisible = entries[0].isIntersecting; syncBar(); }).observe(hero);
-    if (apply) new IntersectionObserver(function (entries) { applyVisible = entries[0].isIntersecting; syncBar(); }).observe(apply);
-  } else if (bar) {
-    bar.classList.add('show');
-    document.body.classList.add('bar-on');
+  if (apply && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      var e = entries[0];
+      setBar(!(e.isIntersecting || e.boundingClientRect.top < 0));
+    }).observe(apply);
+  } else {
+    setBar(true);
   }
   var onScroll = function () { if (header) header.classList.toggle('scrolled', window.scrollY > 8); };
   window.addEventListener('scroll', onScroll, { passive: true });

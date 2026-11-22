@@ -187,7 +187,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .photo img { display: block; width: 100%; height: auto }
 .photo.real::after { content: ""; position: absolute; inset: 0; background: rgba(12, 37, 67, .15); pointer-events: none }
 .hero-art.photo { margin: 0 }
+.photo-after { margin: 28px 0 0 }
 @media (min-width: 960px) { .photo-wide img { aspect-ratio: 3 / 1; object-fit: cover } }
+/* Phones: crop every photo to a short strip so the page stays short */
+@media (max-width: 720px) { .photo img { aspect-ratio: 5 / 2; object-fit: cover } }
 
 /* ---------- Sections ---------- */
 .section { padding-block: 80px; border-bottom: 1px solid var(--hg-line) }
@@ -207,12 +210,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .rtable tbody tr:nth-child(even) { background: var(--hg-lane) }
 .rtable tbody th { text-align: left; font-weight: 600; font-size: 20px; padding: 13px 18px }
 .rtable tbody th .pin { display: inline-block; vertical-align: -2px; width: 18px; height: 18px; margin-right: 12px; fill: none; stroke: var(--hg-steel); stroke-width: 2.4 }
-.rtable td.num { background: var(--hg-night); text-align: right; font-weight: 800; font-size: 22px; padding: 13px 18px; width: 1%; white-space: nowrap }
+.rtable td.num { text-align: right; font-weight: 800; font-size: 22px; padding: 13px 18px; width: 1%; white-space: nowrap }
 .rtable td.num.up { color: var(--hg-lime) }
-.rtable td.ask { background: var(--hg-night); padding: 8px 14px 8px 4px; width: 1%; white-space: nowrap }
+.rtable td.ask { padding: 8px 14px 8px 4px; width: 1%; white-space: nowrap }
 .rtable td.ask a { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; padding: 0 12px; border-radius: 10px; border: 2px solid var(--hg-line); color: var(--hg-sky); font-size: 14px; font-weight: 700; text-decoration: none }
 .rtable td.ask a:hover { border-color: var(--hg-sky) }
-.rtable td.ask .ic { width: 16px; height: 16px; stroke-width: 2.4 }
+.rtable td.ask .ic { width: 22px; height: 22px }
 .rtable-foot { display: flex; align-items: center; gap: 10px; background: var(--hg-sky); color: var(--hg-navy); padding: 13px 18px; font-weight: 700; font-size: 17px }
 .rtable-foot .ic { width: 20px; height: 20px; stroke-width: 2.2 }
 @media (max-width: 480px) {
@@ -229,6 +232,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .map { margin: 0; background: var(--hg-night); border-radius: var(--r-md); padding: 20px; display: grid; gap: 10px }
 .map svg { width: 100%; height: auto }
 .map figcaption { color: var(--hg-slate); font-size: 15px }
+@media (max-width: 720px) { .map { display: none } }
 .note-card { display: flex; gap: 16px; align-items: flex-start; background: var(--hg-lane); border-radius: var(--r-md); padding: 22px }
 .note-card .tile { background: var(--hg-route) }
 .note-card b { display: block; font-size: 19px }
@@ -326,7 +330,7 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 3px solid var
 .biz-cta b { color: var(--hg-white) }
 
 /* ---------- Final CTA ---------- */
-.apply { padding-block: 72px; border-bottom: 0 }
+.apply { padding-block: 72px }
 .apply .wrap { display: grid; gap: 28px }
 .cta-panel { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); background: var(--hg-sky); color: var(--hg-navy); border-radius: var(--r-lg); padding: clamp(20px, 4vw, 34px) clamp(20px, 4vw, 44px); text-decoration: none; transition: transform .15s ease, background-color .15s ease }
 .cta-panel:hover { background: #86DBFB; transform: translateY(-2px) }
@@ -364,5 +368,7 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 3px solid var
   .header-cta .btn { transition: opacity .2s ease }
   body.bar-on .header-cta .btn { opacity: 0; visibility: hidden }
   .mobile-bar .btn { width: 100% }
+  /* Phones: the bottom bar is the WhatsApp button, so the hero doesn't repeat it */
+  .hero-wa { display: none }
   .site-footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)) }
 }
