@@ -26,7 +26,7 @@ The site is a single scrolling page. Everything a driver needs fits on one page,
 | 6 | For businesses (`#business`) | Win capacity work | Route coverage, driver supply, LWB / larger loads | Email us |
 | — | Footer | Trust + legal | Stacked logo, links, contact, registered company details | — |
 
-On phones, a sticky **WhatsApp to apply** bar is the only WhatsApp button for drivers. It shows from the top of the page and hides once the business section is on screen or scrolled past, so business readers don't see it. While it shows, the header WhatsApp button and the hero button are hidden, so there is only one on screen. On phones every photo is cropped to a short 5:2 strip.
+On phones, a sticky **WhatsApp to apply** bar is the only WhatsApp button for drivers. It shows from the top of the page and hides once the business section is on screen or scrolled past, so business readers don't see it. While it shows, the header WhatsApp button and the hero button are hidden, so there is only one on screen. On phones every photo is cropped to a short 5:2 strip, and the hero drops the "Drivers wanted" pill and the "Or save the number" line.
 
 ## 3. Calls to action and WhatsApp messages
 

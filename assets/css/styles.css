@@ -379,5 +379,7 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 3px solid var
   .mobile-bar .btn { width: 100% }
   /* Phones: the bottom bar is the WhatsApp button, so the hero doesn't repeat it */
   .hero-wa { display: none }
+  /* Phones: keep the hero short. No "Drivers wanted" pill and no "Or save the number" line */
+  .hero .pill, .hero-note { display: none }
   .site-footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)) }
 }
