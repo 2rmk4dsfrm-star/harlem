@@ -3,6 +3,7 @@
    2. Mobile menu toggle.
    3. Pay calculator.
    4. Header border + mobile "apply" bar on scroll.
+   5. Tap feedback on iPhone.
 */
 (function () {
   'use strict';
@@ -13,6 +14,7 @@
   var METER_MAX = 300;                  // right-hand end of the pay meter, in £
   // --------------------------------------------------------------------------
 
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 });
 
   function waLink(message) {
@@ -53,13 +55,42 @@
     var outHelp = document.getElementById('out-help');
     var mark = document.getElementById('meter-mark');
 
+    var result = form.querySelector('.calc-result');
+    var shown = {};   // the £ figure each output currently shows
+    var timers = {};
+
+    // Set a £ figure. When a rate or day button is tapped, the figure ticks
+    // quickly to the new amount so the change is easy to spot. While the
+    // slider is dragged (or with reduced motion on) it changes straight away.
+    var setMoney = function (el, value, tick) {
+      var from = shown[el.id];
+      shown[el.id] = value;
+      if (timers[el.id]) cancelAnimationFrame(timers[el.id]);
+      if (!tick || reduceMotion || from === undefined || from === value) {
+        el.textContent = gbp.format(value);
+        return;
+      }
+      var start = null, DURATION = 280;
+      result.setAttribute('aria-busy', 'true'); // screen readers hear only the final figure
+      var step = function (now) {
+        if (start === null) start = now;
+        var t = Math.min(1, (now - start) / DURATION);
+        var eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = gbp.format(from + (value - from) * eased);
+        if (t < 1) { timers[el.id] = requestAnimationFrame(step); }
+        else { timers[el.id] = null; if (!timers['out-day'] && !timers['out-week']) result.removeAttribute('aria-busy'); }
+      };
+      timers[el.id] = requestAnimationFrame(step);
+    };
+
     var checked = function (name) {
       var el = form.querySelector('input[name="' + name + '"]:checked');
       return el ? parseFloat(el.value) : 0;
     };
     var rateLabel = function (rate) { return rate < 1 ? Math.round(rate * 100) + 'p' : gbp.format(rate).replace(/^£(\d+)$/, '£$1.00'); };
 
-    var update = function () {
+    var update = function (e) {
+      var tick = !!(e && e.target && e.target.type === 'radio');
       var rate = checked('rate');
       var days = checked('days');
       var n = parseInt(parcels.value, 10);
@@ -67,8 +98,8 @@
       var weekly = daily * days;
 
       parcelsOut.textContent = n;
-      outDay.textContent = gbp.format(daily);
-      outWeek.textContent = gbp.format(weekly);
+      setMoney(outDay, daily, tick);
+      setMoney(outWeek, weekly, tick);
       outHelp.textContent = 'At ' + rateLabel(rate) + ', ' + Math.ceil(TARGET_DAILY / rate) + ' parcels a day makes ' + gbp.format(TARGET_DAILY) + '.';
 
       var pct = Math.min(100, (daily / METER_MAX) * 100);
@@ -77,7 +108,6 @@
       parcels.style.setProperty('--fill', fill.toFixed(1) + '%');
     };
     form.addEventListener('input', update);
-    form.addEventListener('change', update);
     update();
   }
 
@@ -103,4 +133,8 @@
   var onScroll = function () { if (header) header.classList.toggle('scrolled', window.scrollY > 8); };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // 5. Tap feedback ------------------------------------------------------------
+  // iPhone Safari only shows the pressed (:active) style when the page listens for touches.
+  document.addEventListener('touchstart', function () {}, { passive: true });
 })();
