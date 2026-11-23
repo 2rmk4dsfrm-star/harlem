@@ -28,7 +28,7 @@ The site is hosted on **GitHub Pages**, deployed from the `main` branch, root fo
 
 Every push to `main` republishes the site within a minute or two. `.nojekyll` tells GitHub to serve the files as they are.
 
-The site is static, so it would also run on Netlify or Cloudflare Pages without changes. If you move to your own domain, update the three `github.io` URLs at the top of `index.html`.
+The site is static, so it would also run on Netlify or Cloudflare Pages without changes. If you move to your own domain, find and replace `https://2rmk4dsfrm-star.github.io/harlem/` with the new address in `index.html`, `sitemap.xml` and `robots.txt` (each spot is marked `SITE URL`). Then add the sitemap in Google Search Console.
 
 Before launch, work through the checklist in `docs/site-plan.md`. Search the code for `TODO-LAUNCH` to find every placeholder.
 
