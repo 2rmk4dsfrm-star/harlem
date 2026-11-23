@@ -21,7 +21,7 @@ The site is a single scrolling page. Everything a driver needs fits on one page,
 | 1 | Hero (`#top`) | Repeat the poster's promise | "Earn up to £200 a day", £75–£200 banner, 80p per parcel, Leeds depot Mon–Sat, van illustration, 4 benefits | WhatsApp to apply (desktop; the bottom bar on phones) · See routes & pay |
 | 2 | Routes & pay (`#routes`) | Show every route and rate | 7-route table (80p / £1.00), schematic map from the Leeds depot (hidden on phones), LWB van note, depot photo | WhatsApp button on each route (pre-filled message) |
 | 3 | Pay calculator (`#calculator`) | Let drivers see their own numbers | Rate (80p / £1.00), parcels per day (50–300), days per week (1–6) → daily + weekly estimate, £75–£200 meter, costs disclaimer | None (header button / bottom bar) |
-| 4 | How to apply (`#requirements`) | Remove doubt before they message | What you need as a one-line tick list (vehicle, hire & reward insurance, licence, right to work, experience) + the 3 steps as a tracker row | None (header button / bottom bar) |
+| 4 | How to apply (`#requirements`) | Remove doubt before they message | What you need with icons, one line each on phones and fuller wording on desktop (vehicle, hire & reward insurance, licence, right to work, experience) + the 3 steps as a tracker row (detail lines on desktop only) | None (header button / bottom bar) |
 | 5 | FAQ (`#faq`) | Answer objections | 9 questions: self-employment, pay, pay day, vehicle, insurance, depot, days, experience, start date | Ask us on WhatsApp |
 | 6 | For businesses (`#business`) | Win capacity work | Route coverage, driver supply, LWB / larger loads | Email us |
 | — | Footer | Trust + legal | Stacked logo, links, contact, registered company details | — |
