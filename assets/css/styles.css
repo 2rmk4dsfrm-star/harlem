@@ -184,22 +184,21 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .benefits span { color: var(--hg-mist); font-size: 15px }
 
 /* ---------- Trust bar ----------
-   Three plain facts under the hero. Same navy as every section; numbers
-   are white (lime stays for money only). Rows on phones, columns on desktop. */
-.trust { padding-block: 28px; border-bottom: 1px solid var(--hg-line) }
-.trust-list { display: grid }
-.trust-list li { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 14px; align-items: center; padding-block: 14px }
+   Three plain facts under the hero, in one dark panel with a sky outline.
+   The section itself stays navy like every other section. Numbers are sky
+   (lime stays for money only). Rows on phones, columns on desktop. */
+.trust { padding-block: 40px; border-bottom: 1px solid var(--hg-line) }
+.trust-list { display: grid; padding: 4px 20px; background: var(--hg-night); border: 2px solid var(--hg-sky); border-radius: var(--r-md) }
+.trust-list li { display: grid; gap: 4px; padding-block: 18px }
 .trust-list li + li { border-top: 1px solid var(--hg-line) }
-.trust-num { font-size: 32px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; color: var(--hg-white) }
-.trust-list b { display: block; font-size: 18px; font-weight: 700; line-height: 1.25 }
-.trust-list span:not(.trust-num) { display: block; color: var(--hg-mist); font-size: 15px; line-height: 1.35; margin-top: 4px }
+.trust-num { font-size: 44px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; color: var(--hg-sky) }
+.trust-list b { margin-top: 4px; font-size: 19px; font-weight: 700; line-height: 1.25 }
+.trust-sub { color: var(--hg-mist); font-size: 15px; line-height: 1.35 }
 @media (min-width: 760px) {
-  .trust { padding-block: 36px }
-  .trust-list { grid-template-columns: repeat(3, minmax(0, 1fr)) }
-  .trust-list li { grid-template-columns: none; gap: 8px; align-items: start; align-content: start; padding: 0 28px }
-  .trust-list li:first-child { padding-left: 0 }
+  .trust-list { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 32px 0 }
+  .trust-list li { padding: 0 32px; align-content: start }
   .trust-list li + li { border-top: 0; border-left: 1px solid var(--hg-line) }
-  .trust-num { font-size: 48px }
+  .trust-num { font-size: 56px }
 }
 
 /* ---------- Photos ----------
