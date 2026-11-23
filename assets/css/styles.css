@@ -447,3 +447,24 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 3px solid var
   .ins-help::details-content { height: 0; overflow: clip; transition: height .22s ease, content-visibility .22s allow-discrete }
   .ins-help[open]::details-content { height: auto }
 }
+
+/* ---------- Town pages (one per route town, built by tools/make_town_pages.py) ---------- */
+.rtable tbody th .town-a { color: var(--hg-white); text-decoration: underline; text-decoration-color: var(--hg-line); text-underline-offset: 5px; text-decoration-thickness: 2px; display: inline-flex; align-items: center; gap: 6px; min-height: 44px }
+.rtable tbody th .town-a .ic { width: 16px; height: 16px; color: var(--hg-sky); stroke-width: 2.4 }
+.rtable tbody th .town-a:active { color: var(--hg-sky) }
+@media (hover: hover) { .rtable tbody th .town-a:hover { color: var(--hg-sky); text-decoration-color: var(--hg-sky) } }
+.back-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; border: 2px solid var(--hg-line); border-radius: 12px; color: var(--hg-white); font-weight: 700; text-decoration: none }
+.back-link .ic { width: 18px; height: 18px; transform: rotate(180deg); color: var(--hg-sky); stroke-width: 2.2 }
+.town-hero .wrap { display: grid; gap: 20px; justify-items: start }
+.town-title { font-size: clamp(40px, 8vw, 72px); font-weight: 800; letter-spacing: -0.035em; line-height: 1 }
+.small-print { margin-top: 16px; color: var(--hg-mist); font-size: 15px }
+.small-print a { font-weight: 700 }
+.town-pay tbody th { font-size: 20px }
+.town-links { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px }
+.town-links a { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 56px; padding: 0 12px; font-size: 16px; border: 2px solid var(--hg-line); border-radius: var(--r-md); color: var(--hg-white); text-decoration: none }
+.town-links span { font-weight: 800 }
+.town-links span.up { color: var(--hg-lime) }
+.town-links a:active { border-color: var(--hg-sky) }
+.town-page .site-footer .legal p + p { margin-top: 8px }
+.town-pay td.num { color: var(--hg-lime) }
+.town-page .back-link { margin-left: auto }
