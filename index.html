@@ -7,7 +7,7 @@
 <meta name="description" content="Self-employed multi-drop delivery drivers wanted in Leeds, Bradford, Wakefield, Huddersfield, Halifax, Harrogate and York. 80p per parcel, £75–£200 a day, paid weekly. WhatsApp 07548 547193 to apply.">
 <meta name="theme-color" content="#0C2543">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<!-- If you move to your own domain, change these three GitHub Pages URLs to it. -->
+<!-- SITE URL: if you move to your own domain, find and replace https://2rmk4dsfrm-star.github.io/harlem/ in index.html, sitemap.xml and robots.txt. -->
 <link rel="canonical" href="https://2rmk4dsfrm-star.github.io/harlem/">
 <meta property="og:url" content="https://2rmk4dsfrm-star.github.io/harlem/">
 <meta property="og:type" content="website">
@@ -21,18 +21,58 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="assets/css/styles.css">
+<!-- Google-only details (visitors never see this). SITE URL: if you move to your own domain,
+     find and replace https://2rmk4dsfrm-star.github.io/harlem/ in index.html, sitemap.xml and robots.txt. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "JobPosting",
-  "title": "Self-employed multi-drop delivery driver",
-  "description": "<p>Permanent Monday to Saturday parcel delivery routes starting from our Leeds depot, covering Bradford, Leeds, Wakefield, Huddersfield, Halifax, Harrogate and York.</p><p>Paid 80p per parcel (£1.00 on Harrogate and York routes), typically £75–£200 per day. Paid weekly. Self-employed.</p><p>You need a car or SWB van and hire &amp; reward insurance. Parcel experience preferred.</p><p>WhatsApp 07548 547193 to apply.</p>",
-  "datePosted": "2026-11-20",
-  "employmentType": "CONTRACTOR",
-  "directApply": false,
-  "hiringOrganization": { "@type": "Organization", "name": "Harlem Group" },
-  "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Leeds", "addressRegion": "West Yorkshire", "addressCountry": "GB" } },
-  "baseSalary": { "@type": "MonetaryAmount", "currency": "GBP", "value": { "@type": "QuantitativeValue", "minValue": 75, "maxValue": 200, "unitText": "DAY" } }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://2rmk4dsfrm-star.github.io/harlem/#org",
+      "name": "Harlem Group",
+      "legalName": "Harlem Group Ltd",
+      "url": "https://2rmk4dsfrm-star.github.io/harlem/",
+      "logo": "https://2rmk4dsfrm-star.github.io/harlem/assets/img/logo-mark-512.png",
+      "email": "harlemgroupltd@gmail.com",
+      "telephone": "+447548547193",
+      "identifier": { "@type": "PropertyValue", "propertyID": "Companies House company number", "value": "17192003" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Leeds", "addressRegion": "West Yorkshire", "addressCountry": "GB" },
+      "areaServed": ["Leeds", "Bradford", "Wakefield", "Huddersfield", "Halifax", "Harrogate", "York"],
+      "description": "Leeds parcel delivery subcontractor supplying self-employed multi-drop drivers and route cover across West and North Yorkshire.",
+      "contactPoint": [
+        { "@type": "ContactPoint", "contactType": "driver recruitment", "telephone": "+447548547193", "areaServed": "GB", "availableLanguage": "English" },
+        { "@type": "ContactPoint", "contactType": "sales", "email": "harlemgroupltd@gmail.com", "areaServed": "GB", "availableLanguage": "English" }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://2rmk4dsfrm-star.github.io/harlem/#website",
+      "url": "https://2rmk4dsfrm-star.github.io/harlem/",
+      "name": "Harlem Group",
+      "publisher": { "@id": "https://2rmk4dsfrm-star.github.io/harlem/#org" }
+    },
+    {
+      "@type": "JobPosting",
+      "title": "Self-employed multi-drop delivery driver",
+      "description": "<p>Permanent Monday to Saturday parcel delivery routes starting from our Leeds depot, covering Bradford, Leeds, Wakefield, Huddersfield, Halifax, Harrogate and York.</p><p>Paid 80p per parcel (£1.00 on Harrogate and York routes), typically £75–£200 per day. Paid weekly. Self-employed.</p><p>You need a car or SWB van, hire &amp; reward insurance, a full UK driving licence with no more than 6 points and the right to work in the UK. Parcel experience preferred, not essential.</p><p>WhatsApp 07548 547193 to apply.</p>",
+      "identifier": { "@type": "PropertyValue", "name": "Harlem Group", "value": "HG-MULTIDROP-YORKS" },
+      "datePosted": "2026-11-23",
+      "employmentType": "CONTRACTOR",
+      "directApply": false,
+      "hiringOrganization": { "@type": "Organization", "@id": "https://2rmk4dsfrm-star.github.io/harlem/#org", "name": "Harlem Group", "sameAs": "https://2rmk4dsfrm-star.github.io/harlem/", "logo": "https://2rmk4dsfrm-star.github.io/harlem/assets/img/logo-mark-512.png" },
+      "jobLocation": [
+        { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Leeds", "addressRegion": "West Yorkshire", "addressCountry": "GB" } },
+        { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Bradford", "addressRegion": "West Yorkshire", "addressCountry": "GB" } },
+        { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Wakefield", "addressRegion": "West Yorkshire", "addressCountry": "GB" } },
+        { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Huddersfield", "addressRegion": "West Yorkshire", "addressCountry": "GB" } },
+        { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Halifax", "addressRegion": "West Yorkshire", "addressCountry": "GB" } },
+        { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Harrogate", "addressRegion": "North Yorkshire", "addressCountry": "GB" } },
+        { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "York", "addressRegion": "North Yorkshire", "addressCountry": "GB" } }
+      ],
+      "baseSalary": { "@type": "MonetaryAmount", "currency": "GBP", "value": { "@type": "QuantitativeValue", "minValue": 75, "maxValue": 200, "unitText": "DAY" } }
+    }
+  ]
 }
 </script>
 </head>
@@ -264,6 +304,15 @@
           <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-passport"/></svg></span><div><b>Right to work in the UK</b><small class="narrow-only">Passport or share code checked</small><small class="wide-only">We check this for every driver.</small></div></li>
           <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-box"/></svg></span><div><b>Parcel experience</b><small class="narrow-only">Preferred, not essential</small><small class="wide-only">Preferred, but tell us about any driving work you've done.</small></div></li>
         </ul>
+        <details class="ins-help">
+          <summary><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-shield"/></svg></span><span>No hire &amp; reward cover yet?<small>Where drivers get it</small></span><svg class="ic plus" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <ul class="ins-list">
+            <li><a href="https://www.zego.com/hire-and-reward-insurance" target="_blank" rel="noopener nofollow"><b>Zego</b><span>Courier cover for cars and vans</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+            <li><a href="https://inshur.com/en-gb/courier-insurance" target="_blank" rel="noopener nofollow"><b>Inshur</b><span>Courier cover, 30 days or a year</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+            <li><a href="https://www.quotezone.co.uk/courier-insurance/self-employed" target="_blank" rel="noopener nofollow"><b>Quotezone</b><span>Compare courier insurance quotes</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          </ul>
+          <p class="ins-note">You choose your own cover. Check it covers multi-drop parcel delivery. We're not paid for these links.</p>
+        </details>
       </div>
       <div class="steps-wrap">
         <h3>3 steps</h3>
@@ -357,8 +406,7 @@
     </div>
     <div class="biz-cta">
       <p><b>Need drivers or route cover?</b> Tell us the area, volumes and start date, and we'll come back to you.</p>
-      <!-- TODO-LAUNCH: replace the placeholder email address in the href below (the footer shows it too). -->
-      <a class="btn sky" href="mailto:enquiries@example.com?subject=Delivery%20capacity%20enquiry"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Email us</a>
+      <a class="btn sky" href="mailto:harlemgroupltd@gmail.com?subject=Delivery%20capacity%20enquiry"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Email us</a>
     </div>
   </div>
 </section>
@@ -380,12 +428,12 @@
     <div class="f-contact">
       <span class="label">Contact</span>
       <p>Drivers: WhatsApp <a href="https://wa.me/447548547193" target="_blank" rel="noopener">07548 547193</a></p>
-      <p>Businesses: <a href="mailto:enquiries@example.com">enquiries@example.com</a></p>
+      <p>Businesses: <a href="mailto:harlemgroupltd@gmail.com">harlemgroupltd@gmail.com</a></p>
     </div>
   </div>
   <div class="wrap legal">
-    <!-- TODO-LAUNCH: fill in registered company details (Companies Act 2006 requires name, number and registered office on the website). -->
-    <p>© 2026 Harlem Group. [Registered company name] is registered in England and Wales, company no. [00000000]. Registered office: [address].</p>
+    <!-- TODO-LAUNCH: add the registered office address after the company number (the law requires it on the website). -->
+    <p>© 2026 Harlem Group Ltd. Registered in England and Wales, company no. 17192003.</p>
   </div>
 </footer>
 

@@ -61,7 +61,9 @@ The messages live in the `data-wa` attribute of each link in `index.html`, so yo
 
 - **Title:** Delivery Driver Jobs in Leeds · Earn up to £200 a day · Harlem Group
 - **Meta description:** lists all seven towns, the rate and the WhatsApp number
-- **Google for Jobs:** `JobPosting` structured data (contractor, Leeds, £75–£200 per day). Update `datePosted` whenever you re-advertise.
+- **Google for Jobs:** one `JobPosting` listing all seven towns (contractor, £75–£200 per day). Google allows one job posting per page, so separate town listings would need separate town pages. Update `datePosted` whenever you re-advertise.
+- **Business details for Google:** `Organization` structured data (name, company number, logo, WhatsApp, email, towns covered)
+- **Sitemap:** `sitemap.xml` and `robots.txt`. Submit the sitemap in Search Console once the domain is connected.
 - **Share image:** `assets/img/og-image.png` (1200 × 630), used by WhatsApp, Facebook and LinkedIn link previews
 - **Later:** a Google Business Profile for the depot (if it can be public), and the site URL on every poster
 
@@ -74,8 +76,9 @@ The messages live in the `data-wa` attribute of each link in `index.html`, so yo
 
 ## 7. Launch checklist
 
-- [ ] Replace `enquiries@example.com` with your real business email (search the code for `TODO-LAUNCH`)
-- [ ] Fill in the registered company name, number and office in the footer (required for UK limited companies)
+- [x] Replace `enquiries@example.com` with your real business email
+- [x] Registered company name and number in the footer
+- [ ] Add the registered office address to the footer (required for UK limited companies; search for `TODO-LAUNCH`)
 - [ ] Confirm or edit the assumed content in section 4
 - [ ] Buy and connect a domain, then make the `og:image` URL absolute and add a canonical link
 - [ ] Test every WhatsApp button on an iPhone and an Android phone
