@@ -183,6 +183,24 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .benefits b { display: block; font-size: 18px; font-weight: 700 }
 .benefits span { color: var(--hg-mist); font-size: 15px }
 
+/* ---------- Trust bar ----------
+   Three plain facts under the hero, in one dark panel with a sky outline.
+   The section itself stays navy like every other section. Numbers are sky
+   (lime stays for money only). Rows on phones, columns on desktop. */
+.trust { padding-block: 40px; border-bottom: 1px solid var(--hg-line) }
+.trust-list { display: grid; padding: 4px 20px; background: var(--hg-night); border: 2px solid var(--hg-sky); border-radius: var(--r-md) }
+.trust-list li { display: grid; gap: 4px; padding-block: 18px }
+.trust-list li + li { border-top: 1px solid var(--hg-line) }
+.trust-num { font-size: 44px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; color: var(--hg-sky) }
+.trust-list b { margin-top: 4px; font-size: 19px; font-weight: 700; line-height: 1.25 }
+.trust-sub { color: var(--hg-mist); font-size: 15px; line-height: 1.35 }
+@media (min-width: 760px) {
+  .trust-list { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 32px 0 }
+  .trust-list li { padding: 0 32px; align-content: start }
+  .trust-list li + li { border-top: 0; border-left: 1px solid var(--hg-line) }
+  .trust-num { font-size: 56px }
+}
+
 /* ---------- Photos ----------
    Each slot holds one image, full width, with no text on top.
    Stand-in illustrations live in assets/img/photos/*.svg. To use a real photo,
