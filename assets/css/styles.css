@@ -468,3 +468,16 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 3px solid var
 .town-page .site-footer .legal p + p { margin-top: 8px }
 .town-pay td.num { color: var(--hg-lime) }
 .town-page .back-link { margin-left: auto }
+/* Placeholder boxes: facts still to be supplied. Remove by filling TOWN FACTS in tools/make_town_pages.py */
+.todo-box { list-style: none; border: 2px dashed var(--hg-slate); border-radius: var(--r-md); padding: 14px 16px; color: var(--hg-mist); font-size: 15px; margin-top: 12px }
+.todo-box > b { display: block; color: var(--hg-white); font-size: 16px; margin-bottom: 6px }
+.todo-box ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px }
+.ticks li.todo-box { display: block }
+.town-quote { margin: 0; border-left: 4px solid var(--hg-sky); padding: 4px 0 4px 18px }
+.town-quote blockquote { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.3 }
+.town-quote figcaption { margin-top: 8px; color: var(--hg-mist) }
+.f-towns { margin-bottom: 8px }
+.f-towns a { color: var(--hg-mist); display: inline-flex; align-items: center; min-height: 44px }
+.f-towns a:hover { color: var(--hg-sky) }
+.ticks .todo-box li { display: block; border: 0; padding: 0; margin: 0; min-height: 0 }
+.ticks li.todo-box { padding: 14px 16px 16px; margin-top: 16px; border: 2px dashed var(--hg-slate) }

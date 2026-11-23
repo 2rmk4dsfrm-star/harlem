@@ -5,10 +5,19 @@ import json, re, html
 from pathlib import Path
 
 SITE = "https://2rmk4dsfrm-star.github.io/harlem/"   # SITE URL
+
+# PRE-LAUNCH SWITCH: True keeps every page (home + towns) out of Google.
+# At launch, set to False and re-run this script, then submit sitemap.xml in Search Console.
+HIDE_FROM_GOOGLE = True
+NOINDEX_TAG = '<meta name="robots" content="noindex"><!-- PRE-LAUNCH: set by HIDE_FROM_GOOGLE in tools/make_town_pages.py -->\n' 
 WA = "447548547193"
 
 TOWNS = [
-  # slug, name, region, rate in pence, postcode area, lead line (town-specific)
+  # slug, name, region, rate in pence, postcode area, lead line (town-specific).
+  # TOWN FACTS: fill these in per town, then re-run the script. While a fact is
+  # empty (""), the page shows a dashed [placeholder] box in its place.
+  #   postcodes  e.g. "YO1, YO10, YO24"         routes_open  e.g. "2 routes open now"
+  #   start      e.g. "Load from 7:30am"        quote / quote_by  e.g. "Steady drops..." / "Sam, 2 years with us"
   dict(slug="leeds", name="Leeds", region="West Yorkshire", p=80, pc="LS",
        lead="Load at our Leeds depot and deliver in Leeds. Your route starts in the city you work in."),
   dict(slug="bradford", name="Bradford", region="West Yorkshire", p=80, pc="BD",
@@ -25,6 +34,9 @@ TOWNS = [
        lead="One of our two best-paying routes. £1.00 a parcel, 20p more than our West Yorkshire routes."),
 ]
 
+def todo(text):
+    return f'<li class="todo"><span>[{text}]</span></li>'
+
 def money(p): return "£1.00" if p == 100 else f"{p}p"
 def gbp(x): return f"£{x:,.0f}"
 
@@ -37,11 +49,25 @@ def page(t):
     rows = "".join(
         f'<tr><th scope="row">{q}</th><td class="num">{gbp(q*t["p"]/100)}</td><td class="num">{gbp(q*t["p"]/100*5)}</td></tr>'
         for q in (100, 150, per200))
+    towns_line = ' · '.join(f'<a href="../{o["slug"]}/">{o["name"]}</a>' for o in TOWNS)
     others = "".join(
         f'<li><a href="../{o["slug"]}/"><b>{o["name"]}</b><span class="{"up" if o["p"]==100 else ""}">{money(o["p"])}</span></a></li>'
         for o in TOWNS if o is not t)
     wa_msg = html.escape(f"Hi Harlem Group, I'd like to apply for the {n} route ({r} per parcel).\nVehicle: \nI live in: ")
     url = f"{SITE}{t['slug']}/"
+    missing = []
+    if not t['postcodes']: missing.append(f"Postcodes covered in {n}, e.g. {t['pc']}1, {t['pc']}2")
+    if not t['routes_open']: missing.append(f"How many {n} routes are open now")
+    if not t['start']: missing.append("Depot start time, e.g. load from 7:30am")
+    if t['routes_open']:
+        routes_li = f'<li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span><div><b>{t["routes_open"]}</b><small>Message us to claim one</small></div></li>'
+    else:
+        routes_li = ''
+    facts_todo = routes_li + (f'<li class="todo-box"><b>[Town facts to add]</b><ul>' + ''.join(f'<li>[{m}]</li>' for m in missing) + '</ul></li>' if missing else '')
+    if t['quote']:
+        quote_html = f'''<section class="section" aria-label="A {n} driver"><div class="wrap"><figure class="town-quote"><blockquote>“{t['quote']}”</blockquote><figcaption>{t['quote_by']}</figcaption></figure></div></section>'''
+    else:
+        quote_html = f'''<section class="section" aria-label="A {n} driver"><div class="wrap"><div class="todo-box"><b>[Driver quote to add]</b><ul><li>[One or two lines from a driver on the {n} route]</li><li>[First name, how long they've driven with us]</li></ul></div></div></section>'''
     ld = {
       "@context": "https://schema.org",
       "@graph": [
@@ -64,7 +90,7 @@ def page(t):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Delivery Driver Jobs in {n} · {r} a parcel · Harlem Group</title>
 <meta name="description" content="Self-employed multi-drop delivery driver jobs in {n} ({t['pc']} postcodes). {r} per parcel, paid weekly, Mon–Sat. Start at our Leeds depot. WhatsApp 07548 547193 to apply.">
-<meta name="theme-color" content="#0C2543">
+{NOINDEX_TAG if HIDE_FROM_GOOGLE else ""}<meta name="theme-color" content="#0C2543">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="{url}">
 <meta property="og:url" content="{url}">
@@ -108,8 +134,9 @@ def page(t):
     <ul class="ticks">
       <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-wallet"/></svg></span><div><b>{r} per parcel</b><small>Paid weekly, self-employed</small></div></li>
       <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-calendar"/></svg></span><div><b>Monday to Saturday</b><small>Permanent route, tell us your days</small></div></li>
-      <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-pin"/></svg></span><div><b>{t['pc']} postcodes in {n}</b><small>Exact postcodes confirmed when you're offered the route</small></div></li>
-      <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-route"/></svg></span><div><b>Load at our Leeds depot</b><small>Address and start time sent once your packs are done</small></div></li>
+      <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-pin"/></svg></span><div><b>{(t['postcodes'] or t['pc'] + ' postcodes in ' + n)}</b><small>Exact postcodes confirmed when you're offered the route</small></div></li>
+      <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-route"/></svg></span><div><b>Load at our Leeds depot</b><small>{t['start'] or 'Address and start time sent once your packs are done'}</small></div></li>
+      {facts_todo}
     </ul>
   </div>
 </section>
@@ -128,6 +155,7 @@ def page(t):
   </div>
 </section>
 
+{quote_html}
 <section class="section" aria-labelledby="apply-h">
   <div class="wrap">
     <div class="sec-head"><span class="label">How to apply</span><h2 id="apply-h">Car or SWB van + hire &amp; reward insurance.</h2></div>
@@ -151,6 +179,7 @@ def page(t):
 <footer class="site-footer">
   <div class="wrap legal">
     <p>Drivers: WhatsApp <a href="https://wa.me/{WA}" target="_blank" rel="noopener">07548 547193</a> · Businesses: <a href="mailto:harlemgroupltd@gmail.com">harlemgroupltd@gmail.com</a></p>
+    <p class="f-towns">Towns we cover: {towns_line}</p>
     <p>© 2026 Harlem Group Ltd. Registered in England and Wales, company no. 17192003.</p>
   </div>
 </footer>
@@ -164,6 +193,18 @@ def page(t):
 '''
 
 for t in TOWNS:
+    for k in ('postcodes', 'routes_open', 'start', 'quote', 'quote_by'): t.setdefault(k, '')
+
+for t in TOWNS:
     d = Path(t["slug"]); d.mkdir(exist_ok=True)
     (d / "index.html").write_text(page(t))
+# Apply the same switch to the home page
+home = Path("index.html").read_text()
+home = home.replace(NOINDEX_TAG, "")
+if HIDE_FROM_GOOGLE:
+    home = home.replace('<meta name="theme-color"', NOINDEX_TAG + '<meta name="theme-color"', 1)
+Path("index.html").write_text(home)
+
+urls = [SITE] + [f"{SITE}{t['slug']}/" for t in TOWNS]
+Path("sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<!-- SITE URL: built by tools/make_town_pages.py. If you move to your own domain, change SITE there and re-run. -->\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url>\n    <loc>{u}</loc>\n    <lastmod>2026-11-23</lastmod>\n  </url>\n' for u in urls) + '</urlset>\n')
 print("built", len(TOWNS))
