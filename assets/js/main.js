@@ -83,20 +83,20 @@
 
   // 4. Header border + mobile apply bar ----------------------------------------
   // On phones the bottom bar is the main WhatsApp button. It shows from the
-  // top of the page and hides once the big apply panel is on screen or passed.
+  // top of the page and hides once the business section comes on screen or is passed.
   var header = document.querySelector('.site-header');
   var bar = document.querySelector('.mobile-bar');
-  var apply = document.getElementById('apply');
+  var biz = document.getElementById('business');
 
   var setBar = function (on) {
     if (bar) bar.classList.toggle('show', on);
     document.body.classList.toggle('bar-on', on);
   };
-  if (apply && 'IntersectionObserver' in window) {
+  if (biz && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
       var e = entries[0];
       setBar(!(e.isIntersecting || e.boundingClientRect.top < 0));
-    }).observe(apply);
+    }).observe(biz);
   } else {
     setBar(true);
   }

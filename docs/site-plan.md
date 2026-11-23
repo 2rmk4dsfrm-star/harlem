@@ -21,13 +21,12 @@ The site is a single scrolling page. Everything a driver needs fits on one page,
 | 1 | Hero (`#top`) | Repeat the poster's promise | "Earn up to £200 a day", £75–£200 banner, 80p per parcel, Leeds depot Mon–Sat, van illustration, 4 benefits | WhatsApp to apply (desktop; the bottom bar on phones) · See routes & pay |
 | 2 | Routes & pay (`#routes`) | Show every route and rate | 7-route table (80p / £1.00), schematic map from the Leeds depot (hidden on phones), LWB van note, depot photo | WhatsApp button on each route (pre-filled message) |
 | 3 | Pay calculator (`#calculator`) | Let drivers see their own numbers | Rate (80p / £1.00), parcels per day (50–300), days per week (1–6) → daily + weekly estimate, £75–£200 meter, costs disclaimer | None (header button / bottom bar) |
-| 4 | How to apply (`#requirements`) | Remove doubt before they message | What you need (vehicle, hire & reward insurance, licence, right to work, experience) + the 3 steps | None (header button / bottom bar) |
+| 4 | How to apply (`#requirements`) | Remove doubt before they message | What you need with icons, one line each on phones and fuller wording on desktop (vehicle, hire & reward insurance, licence, right to work, experience) + the 3 steps as a tracker row (detail lines on desktop only) | None (header button / bottom bar) |
 | 5 | FAQ (`#faq`) | Answer objections | 9 questions: self-employment, pay, pay day, vehicle, insurance, depot, days, experience, start date | Ask us on WhatsApp |
-| 6 | Apply (`#apply`) | Final push for drivers | Big WhatsApp number panel | WhatsApp to apply |
-| 7 | For businesses (`#business`) | Win capacity work | Route coverage, driver supply, LWB / larger loads | Email us |
+| 6 | For businesses (`#business`) | Win capacity work | Route coverage, driver supply, LWB / larger loads | Email us |
 | — | Footer | Trust + legal | Stacked logo, links, contact, registered company details | — |
 
-On phones, a sticky **WhatsApp to apply** bar is the only WhatsApp button for drivers. It shows from the top of the page and hides once the final panel is on screen or scrolled past, so business readers don't see it. While it shows, the header WhatsApp button and the hero button are hidden, so there is only one on screen. On phones every photo is cropped to a short 5:2 strip.
+On phones, a sticky **WhatsApp to apply** bar is the only WhatsApp button for drivers. It shows from the top of the page and hides once the business section is on screen or scrolled past, so business readers don't see it. While it shows, the header WhatsApp button and the hero button are hidden, so there is only one on screen. On phones every photo is cropped to a short 5:2 strip.
 
 ## 3. Calls to action and WhatsApp messages
 
@@ -35,7 +34,7 @@ Every driver button opens WhatsApp on **07548 547193** with a message already ty
 
 | Button | Pre-filled message |
 | --- | --- |
-| Header, hero, final panel, mobile bar | "Hi Harlem Group, I'd like to apply to drive." then a "Vehicle:" line and a "Town:" line for the driver to fill in |
+| Header, hero, mobile bar | "Hi Harlem Group, I'd like to apply to drive." then a "Vehicle:" line and a "Town:" line for the driver to fill in |
 | Route "Ask" buttons | "Hi, I'm interested in the Bradford route (80p per parcel)." (one per route) |
 | LWB van links | "Hi, I have an LWB van and I'd like to hear about other routes." |
 | FAQ | "Hi Harlem Group, I have a question about driving with you:" |

@@ -69,7 +69,7 @@ Keep one photo per slot, with no text on top and no slideshows.
 | Signal Sky | `#5FCFFA` | Action and contact |
 | Van White | `#FFFFFF` | Headlines, logo |
 | Night Run | `#081B33` | Deepest panels |
-| Route Navy | `#102F52` | Diagonal panels, alternate rows |
+| Route Navy | `#102F52` | Photo frames, alternate rows |
 | Lane Blue | `#13335A` | Tiles, cards |
 | Kerb Line | `#2B4D78` | Borders |
 | Mist | `#C9D6E6` | Body text |
