@@ -28,7 +28,7 @@ The site is hosted on **GitHub Pages**, deployed from the `main` branch, root fo
 
 Every push to `main` republishes the site within a minute or two. `.nojekyll` tells GitHub to serve the files as they are.
 
-The site is static, so it would also run on Netlify or Cloudflare Pages without changes. If you move to your own domain, find and replace `https://2rmk4dsfrm-star.github.io/harlem/` with the new address in `index.html`, `sitemap.xml` and `robots.txt` (each spot is marked `SITE URL`). Then add the sitemap in Google Search Console.
+The site is static, so it would also run on Netlify or Cloudflare Pages without changes. If you move to your own domain, find and replace `https://2rmk4dsfrm-star.github.io/harlem/` with the new address in `index.html` and `robots.txt`, change `SITE` in `tools/make_town_pages.py` and run `python3 tools/make_town_pages.py` (each spot is marked `SITE URL`). Then add the sitemap in Google Search Console.
 
 Before launch, work through the checklist in `docs/site-plan.md`. Search the code for `TODO-LAUNCH` to find every placeholder.
 
@@ -78,3 +78,13 @@ Keep one photo per slot, with no text on top and no slideshows.
 | Brake Light | `#F2545B` | Errors only |
 
 Typeface: **Inter** (Google Fonts). The logo wordmark uses Montserrat SemiBold, already converted to outlines in the SVG files.
+
+## Town pages
+
+There is one page per route town (`/leeds/`, `/york/` and so on), built by `tools/make_town_pages.py`. Don't edit the town `index.html` files by hand. Change the `TOWNS` list in the script, then run `python3 tools/make_town_pages.py` from the repo root. That rebuilds all 7 pages and `sitemap.xml`.
+
+Each town has facts to fill in: `postcodes`, `routes_open`, `start`, `quote` and `quote_by`. While a fact is empty, the page shows a dashed `[placeholder]` box in its place.
+
+## Hidden from Google until launch
+
+Every page carries `<meta name="robots" content="noindex">`, so Google won't list the site or its job postings. Anyone with the link can still open it. To launch, set `HIDE_FROM_GOOGLE = False` in `tools/make_town_pages.py`, run `python3 tools/make_town_pages.py`, then submit `sitemap.xml` in Google Search Console. Don't block the site in `robots.txt` instead: Google needs to crawl the pages to see the noindex tag.

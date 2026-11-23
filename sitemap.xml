@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- SITE URL: if you move to your own domain, change the address below too. -->
+<!-- SITE URL: built by tools/make_town_pages.py. If you move to your own domain, change SITE there and re-run. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://2rmk4dsfrm-star.github.io/harlem/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://2rmk4dsfrm-star.github.io/harlem/leeds/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://2rmk4dsfrm-star.github.io/harlem/bradford/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://2rmk4dsfrm-star.github.io/harlem/wakefield/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://2rmk4dsfrm-star.github.io/harlem/huddersfield/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://2rmk4dsfrm-star.github.io/harlem/halifax/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://2rmk4dsfrm-star.github.io/harlem/harrogate/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://2rmk4dsfrm-star.github.io/harlem/york/</loc>
     <lastmod>2026-11-23</lastmod>
   </url>
 </urlset>
