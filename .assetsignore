@@ -1,0 +1,13 @@
+# Files in the repo that are NOT part of the public website.
+# Cloudflare skips everything listed here when it publishes the site.
+.git
+.github
+.nojekyll
+.assetsignore
+.wrangler
+node_modules
+wrangler.jsonc
+wrangler.toml
+README.md
+docs
+tools

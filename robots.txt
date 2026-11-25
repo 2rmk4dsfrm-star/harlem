@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://2rmk4dsfrm-star.github.io/harlem/sitemap.xml
+Sitemap: https://harlemgroup.co.uk/sitemap.xml
