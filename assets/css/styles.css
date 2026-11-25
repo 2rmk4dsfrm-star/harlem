@@ -474,3 +474,5 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 3px solid var
 .f-towns a:hover { color: var(--hg-sky) }
 
 .ticks.ramp { margin-bottom: 20px }
+.trust-h { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 16px }
+@media (min-width: 900px) { .trust-h { font-size: 34px; margin-bottom: 20px } }
