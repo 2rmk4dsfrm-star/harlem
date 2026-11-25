@@ -4,12 +4,13 @@
    3. Pay calculator.
    4. Header border + mobile "apply" bar on scroll.
    5. Tap feedback on iPhone.
+   6. "Get it here" insurance links open the insurance box under "You need".
 */
 (function () {
   'use strict';
 
   // ---- Settings: change the number or rates here -------------------------
-  var WHATSAPP_NUMBER = '447548547193'; // 07548 547193 in international format, no "+" or spaces
+  var WHATSAPP_NUMBER = '447933997943'; // 07933 997943 in international format, no "+" or spaces
   var TARGET_DAILY = 200;               // used for "X parcels a day makes £200"
   var METER_MAX = 300;                  // right-hand end of the pay meter, in £
   // --------------------------------------------------------------------------
@@ -137,4 +138,15 @@
   // 5. Tap feedback ------------------------------------------------------------
   // iPhone Safari only shows the pressed (:active) style when the page listens for touches.
   document.addEventListener('touchstart', function () {}, { passive: true });
+
+  // 6. Insurance links ---------------------------------------------------------
+  // Links to #get-cover (on this page or from a town page) open the
+  // "No hire & reward cover yet?" box so the insurers are visible straight away.
+  var cover = document.getElementById('get-cover');
+  if (cover) {
+    var openCover = function () { cover.open = true; };
+    if (location.hash === '#get-cover') openCover();
+    window.addEventListener('hashchange', function () { if (location.hash === '#get-cover') openCover(); });
+    document.querySelectorAll('a[href="#get-cover"]').forEach(function (a) { a.addEventListener('click', openCover); });
+  }
 })();

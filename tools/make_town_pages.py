@@ -10,7 +10,7 @@ SITE = "https://harlemgroup.co.uk/"   # SITE URL
 # At launch, set to False and re-run this script, then submit sitemap.xml in Search Console.
 HIDE_FROM_GOOGLE = False
 NOINDEX_TAG = '<meta name="robots" content="noindex"><!-- PRE-LAUNCH: set by HIDE_FROM_GOOGLE in tools/make_town_pages.py -->\n' 
-WA = "447548547193"
+WA = "447933997943"
 
 TOWNS = [
   # slug, name, region, rate in pence, postcode area, lead line (town-specific).
@@ -62,7 +62,7 @@ def page(t):
       "@graph": [
         {"@type": "JobPosting",
          "title": f"Self-employed multi-drop delivery driver, {n}",
-         "description": f"<p>Permanent Monday to Saturday parcel delivery route in {n} ({t['pc']} postcodes), starting from our Leeds depot.</p><p>Paid {r} per parcel, paid weekly. 200 parcels a day makes {day200}. Self-employed.</p><p>New drivers start on 100 to 120 parcels a day, rising to 200+ once you're settled in. Experienced parcel drivers can start on a high-volume route straight away.</p><p>You need a car or SWB van, hire &amp; reward insurance, a full UK driving licence with no more than 6 points and the right to work in the UK. Parcel experience preferred, not essential.</p><p>WhatsApp 07548 547193 to apply.</p>",
+         "description": f"<p>Permanent Monday to Saturday parcel delivery route in {n} ({t['pc']} postcodes), starting from our Leeds depot.</p><p>Paid {r} per parcel, paid weekly. 200 parcels a day makes {day200}. Self-employed.</p><p>New drivers start on 100 to 120 parcels a day, rising to 200+ once you're settled in. Experienced parcel drivers can start on a high-volume route straight away.</p><p>You need a car or SWB van, hire &amp; reward insurance, a full UK driving licence with no more than 6 points and the right to work in the UK. Parcel experience preferred, not essential.</p><p>WhatsApp 07933 997943 to apply.</p>",
          "identifier": {"@type": "PropertyValue", "name": "Harlem Group", "value": f"HG-{t['slug'].upper()}"},
          "datePosted": "2026-11-23", "employmentType": "CONTRACTOR", "directApply": False,
          "hiringOrganization": {"@type": "Organization", "@id": f"{SITE}#org", "name": "Harlem Group", "sameAs": SITE, "logo": f"{SITE}assets/img/logo-mark-512.png"},
@@ -78,13 +78,13 @@ def page(t):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Delivery Driver Jobs in {n} · {r} a parcel · Harlem Group</title>
-<meta name="description" content="Self-employed multi-drop delivery driver jobs in {n} ({t['pc']} postcodes). {r} per parcel, paid weekly, Mon–Sat. Start at our Leeds depot. WhatsApp 07548 547193 to apply.">
+<meta name="description" content="Self-employed multi-drop delivery driver jobs in {n} ({t['pc']} postcodes). {r} per parcel, paid weekly, Mon–Sat. Start at our Leeds depot. WhatsApp 07933 997943 to apply.">
 {NOINDEX_TAG if HIDE_FROM_GOOGLE else ""}<meta name="theme-color" content="#0C2543">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="{url}">
 <meta property="og:url" content="{url}">
 <meta property="og:title" content="Drivers wanted in {n} · {r} a parcel · Harlem Group">
-<meta property="og:image" content="{SITE}assets/img/og-image.png">
+<meta property="og:image" content="{SITE}assets/img/og-image.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
@@ -152,11 +152,11 @@ def page(t):
   <div class="wrap">
     <div class="sec-head"><span class="label">How to apply</span><h2 id="apply-h">Car or SWB van + hire &amp; reward insurance.</h2></div>
     <ol class="track">
-      <li class="go"><span class="d" aria-hidden="true">1</span><b>WhatsApp<br> us</b></li>
-      <li><span class="d" aria-hidden="true">2</span><b>Fill in<br> packs</b></li>
-      <li><span class="d" aria-hidden="true">3</span><b>Collect<br> your route</b></li>
+      <li class="go"><span class="d" aria-hidden="true">1</span><div><b>Get hire &amp; reward insurance</b><small><a href="../#get-cover">No cover yet? Where to get it</a></small></div></li>
+      <li><span class="d" aria-hidden="true">2</span><div><b>WhatsApp us</b></div></li>
+      <li><span class="d" aria-hidden="true">3</span><div><b>Fill in packs</b></div></li>
+      <li><span class="d" aria-hidden="true">4</span><div><b>Collect your route</b></div></li>
     </ol>
-    <p class="small-print"><a href="../#requirements">Everything you need, and where to get insurance</a></p>
   </div>
 </section>
 
@@ -170,7 +170,7 @@ def page(t):
 
 <footer class="site-footer">
   <div class="wrap legal">
-    <p>Drivers: WhatsApp <a href="https://wa.me/{WA}" target="_blank" rel="noopener">07548 547193</a> · Businesses: <a href="mailto:harlemgroupltd@gmail.com">harlemgroupltd@gmail.com</a></p>
+    <p>Drivers: WhatsApp <a href="https://wa.me/{WA}" target="_blank" rel="noopener">07933 997943</a> · Businesses: <a href="mailto:harlemgroupltd@gmail.com">harlemgroupltd@gmail.com</a></p>
     <p class="f-towns">Towns we cover: {towns_line}</p>
     <p>© 2026 Harlem Group Ltd. Registered in England and Wales, company no. 17192003. Registered office: 17 Hilton Road, Leeds, England, LS8 4HB.</p>
   </div>

@@ -38,7 +38,7 @@ If the domain ever changes, find and replace `https://harlemgroup.co.uk/` in `in
 | --- | --- |
 | A route or its rate | The `<tbody>` rows in the `#routes` table in `index.html`, the map labels below it, and the calculator's rate options in `#calc` |
 | A pre-filled WhatsApp message | The `data-wa="…"` text on that link in `index.html` |
-| The WhatsApp number | `WHATSAPP_NUMBER` in `assets/js/main.js`, then find and replace `447548547193` and `07548 547193` in `index.html` |
+| The WhatsApp number | `WHATSAPP_NUMBER` in `assets/js/main.js`, then find and replace `447933997943` and `07933 997943` in `index.html` |
 | Colours | The `--hg-*` tokens at the top of `assets/css/styles.css` (keep them in step with the brand board) |
 | The business email | Search for `enquiries@example.com` |
 
