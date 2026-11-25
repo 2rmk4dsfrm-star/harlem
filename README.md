@@ -21,16 +21,16 @@ python3 -m http.server 8000   # then visit http://localhost:8000
 
 ## Publish
 
-The site is hosted on **GitHub Pages**, deployed from the `main` branch, root folder:
+The site is live at **https://harlemgroup.co.uk** (brand board: https://harlemgroup.co.uk/brand/).
 
-- Website: https://2rmk4dsfrm-star.github.io/harlem/
-- Brand board: https://2rmk4dsfrm-star.github.io/harlem/brand/
+It is hosted on **Cloudflare Workers**. Cloudflare watches the `main` branch and republishes the site within a minute or two of every merge (Workers Builds, deploy command `npx wrangler deploy`).
 
-Every push to `main` republishes the site within a minute or two. `.nojekyll` tells GitHub to serve the files as they are.
+- `wrangler.jsonc` tells Cloudflare the site is plain files served from the repo root.
+- `.assetsignore` lists the repo files that are not part of the website (`tools/`, `docs/`, this README and so on), so they are never published.
 
-The site is static, so it would also run on Netlify or Cloudflare Pages without changes. If you move to your own domain, find and replace `https://2rmk4dsfrm-star.github.io/harlem/` with the new address in `index.html` and `robots.txt`, change `SITE` in `tools/make_town_pages.py` and run `python3 tools/make_town_pages.py` (each spot is marked `SITE URL`). Then add the sitemap in Google Search Console.
+If you add a new folder that isn't part of the website, add it to `.assetsignore`.
 
-Before launch, work through the checklist in `docs/site-plan.md`. Search the code for `TODO-LAUNCH` to find every placeholder.
+If the domain ever changes, find and replace `https://harlemgroup.co.uk/` in `index.html` and `robots.txt`, change `SITE` in `tools/make_town_pages.py` and run `python3 tools/make_town_pages.py` (each spot is marked `SITE URL`). Then update the sitemap in Google Search Console.
 
 ## Common edits
 
@@ -85,6 +85,6 @@ There is one page per route town (`/leeds/`, `/york/` and so on), built by `tool
 
 Each town has facts to fill in: `postcodes`, `routes_open`, `start`, `quote` and `quote_by`. While a fact is empty, the page shows a dashed `[placeholder]` box in its place.
 
-## Hidden from Google until launch
+## Showing in Google
 
-Every page carries `<meta name="robots" content="noindex">`, so Google won't list the site or its job postings. Anyone with the link can still open it. To launch, set `HIDE_FROM_GOOGLE = False` in `tools/make_town_pages.py`, run `python3 tools/make_town_pages.py`, then submit `sitemap.xml` in Google Search Console. Don't block the site in `robots.txt` instead: Google needs to crawl the pages to see the noindex tag.
+The site launched on 2026-11-25, so every page is open to Google (`HIDE_FROM_GOOGLE = False` in `tools/make_town_pages.py`). The brand board at `/brand/` stays hidden with its own noindex tag. To hide the site again, set `HIDE_FROM_GOOGLE = True` and run `python3 tools/make_town_pages.py`. Don't block the site in `robots.txt` instead: Google needs to crawl the pages to see the noindex tag.

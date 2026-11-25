@@ -80,7 +80,7 @@ The messages live in the `data-wa` attribute of each link in `index.html`, so yo
 - [x] Registered company name and number in the footer
 - [x] Add the registered office address to the footer (done: 17 Hilton Road, Leeds, England, LS8 4HB)
 - [ ] Confirm or edit the assumed content in section 4
-- [ ] Buy and connect a domain, then make the `og:image` URL absolute and add a canonical link
+- [x] Connect the domain (done 2026-11-25: harlemgroup.co.uk on Cloudflare Workers; canonical links and `og:image` use it; noindex switched off)
 - [ ] Test every WhatsApp button on an iPhone and an Android phone
 - [ ] Add the site to Google Search Console and request indexing
 - [ ] Optional: privacy-friendly analytics (e.g. Plausible) to count WhatsApp button clicks

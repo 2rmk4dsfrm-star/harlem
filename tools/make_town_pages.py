@@ -4,11 +4,11 @@ Each page is written to <slug>/index.html (e.g. york/index.html)."""
 import json, re, html
 from pathlib import Path
 
-SITE = "https://2rmk4dsfrm-star.github.io/harlem/"   # SITE URL
+SITE = "https://harlemgroup.co.uk/"   # SITE URL
 
 # PRE-LAUNCH SWITCH: True keeps every page (home + towns) out of Google.
 # At launch, set to False and re-run this script, then submit sitemap.xml in Search Console.
-HIDE_FROM_GOOGLE = True
+HIDE_FROM_GOOGLE = False
 NOINDEX_TAG = '<meta name="robots" content="noindex"><!-- PRE-LAUNCH: set by HIDE_FROM_GOOGLE in tools/make_town_pages.py -->\n' 
 WA = "447548547193"
 
@@ -198,5 +198,5 @@ if HIDE_FROM_GOOGLE:
 Path("index.html").write_text(home)
 
 urls = [SITE] + [f"{SITE}{t['slug']}/" for t in TOWNS]
-Path("sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<!-- SITE URL: built by tools/make_town_pages.py. If you move to your own domain, change SITE there and re-run. -->\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url>\n    <loc>{u}</loc>\n    <lastmod>2026-11-23</lastmod>\n  </url>\n' for u in urls) + '</urlset>\n')
+Path("sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<!-- SITE URL: built by tools/make_town_pages.py. If you move to your own domain, change SITE there and re-run. -->\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url>\n    <loc>{u}</loc>\n    <lastmod>2026-11-25</lastmod>\n  </url>\n' for u in urls) + '</urlset>\n')
 print("built", len(TOWNS))
