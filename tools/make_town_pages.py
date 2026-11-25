@@ -43,10 +43,10 @@ sprite = re.search(r'<svg width="0" height="0".*?</svg>\n', src, re.S).group(0)
 
 def page(t):
     r = money(t["p"]); n = t["name"]
-    per200 = 200 * 100 // t["p"]  # parcels for £200
+    day200 = gbp(200 * t["p"] / 100)  # pay for 200 parcels: £160 at 80p, £200 at £1.00
     rows = "".join(
         f'<tr><th scope="row">{q}</th><td class="num">{gbp(q*t["p"]/100)}</td><td class="num">{gbp(q*t["p"]/100*5)}</td></tr>'
-        for q in (100, 150, per200))
+        for q in (100, 150, 200))
     towns_line = ' · '.join(f'<a href="../{o["slug"]}/">{o["name"]}</a>' for o in TOWNS)
     others = "".join(
         f'<li><a href="../{o["slug"]}/"><b>{o["name"]}</b><span class="{"up" if o["p"]==100 else ""}">{money(o["p"])}</span></a></li>'
@@ -62,12 +62,12 @@ def page(t):
       "@graph": [
         {"@type": "JobPosting",
          "title": f"Self-employed multi-drop delivery driver, {n}",
-         "description": f"<p>Permanent Monday to Saturday parcel delivery route in {n} ({t['pc']} postcodes), starting from our Leeds depot.</p><p>Paid {r} per parcel, paid weekly. {per200} parcels a day makes £200. Self-employed.</p><p>You need a car or SWB van, hire &amp; reward insurance, a full UK driving licence with no more than 6 points and the right to work in the UK. Parcel experience preferred, not essential.</p><p>WhatsApp 07548 547193 to apply.</p>",
+         "description": f"<p>Permanent Monday to Saturday parcel delivery route in {n} ({t['pc']} postcodes), starting from our Leeds depot.</p><p>Paid {r} per parcel, paid weekly. 200 parcels a day makes {day200}. Self-employed.</p><p>New drivers start on 100 to 120 parcels a day, rising to 200+ once you're settled in. Experienced parcel drivers can start on a high-volume route straight away.</p><p>You need a car or SWB van, hire &amp; reward insurance, a full UK driving licence with no more than 6 points and the right to work in the UK. Parcel experience preferred, not essential.</p><p>WhatsApp 07548 547193 to apply.</p>",
          "identifier": {"@type": "PropertyValue", "name": "Harlem Group", "value": f"HG-{t['slug'].upper()}"},
          "datePosted": "2026-11-23", "employmentType": "CONTRACTOR", "directApply": False,
          "hiringOrganization": {"@type": "Organization", "@id": f"{SITE}#org", "name": "Harlem Group", "sameAs": SITE, "logo": f"{SITE}assets/img/logo-mark-512.png"},
          "jobLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": n, "addressRegion": t["region"], "addressCountry": "GB"}},
-         "baseSalary": {"@type": "MonetaryAmount", "currency": "GBP", "value": {"@type": "QuantitativeValue", "minValue": 75, "maxValue": 200, "unitText": "DAY"}}},
+         "baseSalary": {"@type": "MonetaryAmount", "currency": "GBP", "value": {"@type": "QuantitativeValue", "minValue": t["p"], "maxValue": 2 * t["p"], "unitText": "DAY"}}},
         {"@type": "BreadcrumbList", "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "Routes", "item": f"{SITE}#routes"},
           {"@type": "ListItem", "position": 2, "name": n, "item": url}]}
@@ -112,7 +112,7 @@ def page(t):
       <span class="where"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>{n} route · from our Leeds depot</span>
     </div>
     <h1 class="town-title">Delivery driver jobs in {n}</h1>
-    <div class="banner"><b>{r} a parcel</b><span>{per200} parcels a day makes £200</span></div>
+    <div class="banner"><b>{r} a parcel</b><span>200 parcels a day makes {day200}</span></div>
     <p class="lead">{t['lead']}</p>
   </div>
 </section>
@@ -132,7 +132,11 @@ def page(t):
 
 <section class="section" aria-labelledby="pay-h">
   <div class="wrap">
-    <div class="sec-head"><span class="label">Pay in {n}</span><h2 id="pay-h">{per200} parcels × {r} = £200 a day.</h2></div>
+    <div class="sec-head"><span class="label">Pay in {n}</span><h2 id="pay-h">200 parcels × {r} = {day200} a day.</h2></div>
+    <ul class="ticks ramp">
+      <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-box"/></svg></span><div><b>Start on 100–120 parcels a day</b><small>Then up to 200+ once you've settled in</small></div></li>
+      <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-bolt"/></svg></span><div><b>Experienced? Start on high volume</b><small>Tell us your experience when you message</small></div></li>
+    </ul>
     <div class="route-table-wrap">
       <table class="rtable town-pay">
         <caption class="sr">What you could earn on the {n} route</caption>
