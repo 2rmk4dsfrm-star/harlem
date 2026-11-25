@@ -78,7 +78,7 @@ The messages live in the `data-wa` attribute of each link in `index.html`, so yo
 
 - [x] Replace `enquiries@example.com` with your real business email
 - [x] Registered company name and number in the footer
-- [ ] Add the registered office address to the footer (required for UK limited companies; search for `TODO-LAUNCH`)
+- [x] Add the registered office address to the footer (done: 17 Hilton Road, Leeds, England, LS8 4HB)
 - [ ] Confirm or edit the assumed content in section 4
 - [ ] Buy and connect a domain, then make the `og:image` URL absolute and add a canonical link
 - [ ] Test every WhatsApp button on an iPhone and an Android phone
