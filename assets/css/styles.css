@@ -472,3 +472,5 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 3px solid var
 .f-towns { margin-bottom: 8px }
 .f-towns a { color: var(--hg-mist); display: inline-flex; align-items: center; min-height: 44px }
 .f-towns a:hover { color: var(--hg-sky) }
+
+.ticks.ramp { margin-bottom: 20px }
