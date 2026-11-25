@@ -9,5 +9,7 @@
     "directory": ".",
     // /leeds/ serves leeds/index.html, and /leeds redirects to /leeds/
     "html_handling": "auto-trailing-slash"
-  }
+  },
+  // Lets Cloudflare build a test copy of each PR branch (npx wrangler preview)
+  "previews": {}
 }
