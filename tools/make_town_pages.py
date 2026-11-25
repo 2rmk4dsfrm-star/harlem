@@ -14,10 +14,9 @@ WA = "447548547193"
 
 TOWNS = [
   # slug, name, region, rate in pence, postcode area, lead line (town-specific).
-  # TOWN FACTS: fill these in per town, then re-run the script. While a fact is
-  # empty (""), the page shows a dashed [placeholder] box in its place.
-  #   postcodes  e.g. "YO1, YO10, YO24"         routes_open  e.g. "2 routes open now"
-  #   start      e.g. "Load from 7:30am"        quote / quote_by  e.g. "Steady drops..." / "Sam, 2 years with us"
+  # TOWN FACTS: set per town below, then re-run the script. Shared defaults are in
+  # FACT_DEFAULTS. postcodes e.g. "YO1, YO10, YO24"; while empty the page says
+  # "YO postcodes in York" (no placeholder shown).
   dict(slug="leeds", name="Leeds", region="West Yorkshire", p=80, pc="LS",
        lead="Load at our Leeds depot and deliver in Leeds. Your route starts in the city you work in."),
   dict(slug="bradford", name="Bradford", region="West Yorkshire", p=80, pc="BD",
@@ -34,8 +33,7 @@ TOWNS = [
        lead="One of our two best-paying routes. £1.00 a parcel, 20p more than our West Yorkshire routes."),
 ]
 
-def todo(text):
-    return f'<li class="todo"><span>[{text}]</span></li>'
+FACT_DEFAULTS = dict(postcodes="", routes_open="2+ jobs open", start="Start time 7am onwards")
 
 def money(p): return "£1.00" if p == 100 else f"{p}p"
 def gbp(x): return f"£{x:,.0f}"
@@ -55,19 +53,10 @@ def page(t):
         for o in TOWNS if o is not t)
     wa_msg = html.escape(f"Hi Harlem Group, I'd like to apply for the {n} route ({r} per parcel).\nVehicle: \nI live in: ")
     url = f"{SITE}{t['slug']}/"
-    missing = []
-    if not t['postcodes']: missing.append(f"Postcodes covered in {n}, e.g. {t['pc']}1, {t['pc']}2")
-    if not t['routes_open']: missing.append(f"How many {n} routes are open now")
-    if not t['start']: missing.append("Depot start time, e.g. load from 7:30am")
     if t['routes_open']:
         routes_li = f'<li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span><div><b>{t["routes_open"]}</b><small>Message us to claim one</small></div></li>'
     else:
         routes_li = ''
-    facts_todo = routes_li + (f'<li class="todo-box"><b>[Town facts to add]</b><ul>' + ''.join(f'<li>[{m}]</li>' for m in missing) + '</ul></li>' if missing else '')
-    if t['quote']:
-        quote_html = f'''<section class="section" aria-label="A {n} driver"><div class="wrap"><figure class="town-quote"><blockquote>“{t['quote']}”</blockquote><figcaption>{t['quote_by']}</figcaption></figure></div></section>'''
-    else:
-        quote_html = f'''<section class="section" aria-label="A {n} driver"><div class="wrap"><div class="todo-box"><b>[Driver quote to add]</b><ul><li>[One or two lines from a driver on the {n} route]</li><li>[First name, how long they've driven with us]</li></ul></div></div></section>'''
     ld = {
       "@context": "https://schema.org",
       "@graph": [
@@ -136,7 +125,7 @@ def page(t):
       <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-calendar"/></svg></span><div><b>Monday to Saturday</b><small>Permanent route, tell us your days</small></div></li>
       <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-pin"/></svg></span><div><b>{(t['postcodes'] or t['pc'] + ' postcodes in ' + n)}</b><small>Exact postcodes confirmed when you're offered the route</small></div></li>
       <li><span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-route"/></svg></span><div><b>Load at our Leeds depot</b><small>{t['start'] or 'Address and start time sent once your packs are done'}</small></div></li>
-      {facts_todo}
+      {routes_li}
     </ul>
   </div>
 </section>
@@ -155,7 +144,6 @@ def page(t):
   </div>
 </section>
 
-{quote_html}
 <section class="section" aria-labelledby="apply-h">
   <div class="wrap">
     <div class="sec-head"><span class="label">How to apply</span><h2 id="apply-h">Car or SWB van + hire &amp; reward insurance.</h2></div>
@@ -180,7 +168,7 @@ def page(t):
   <div class="wrap legal">
     <p>Drivers: WhatsApp <a href="https://wa.me/{WA}" target="_blank" rel="noopener">07548 547193</a> · Businesses: <a href="mailto:harlemgroupltd@gmail.com">harlemgroupltd@gmail.com</a></p>
     <p class="f-towns">Towns we cover: {towns_line}</p>
-    <p>© 2026 Harlem Group Ltd. Registered in England and Wales, company no. 17192003.</p>
+    <p>© 2026 Harlem Group Ltd. Registered in England and Wales, company no. 17192003. Registered office: 17 Hilton Road, Leeds, England, LS8 4HB.</p>
   </div>
 </footer>
 
@@ -193,7 +181,7 @@ def page(t):
 '''
 
 for t in TOWNS:
-    for k in ('postcodes', 'routes_open', 'start', 'quote', 'quote_by'): t.setdefault(k, '')
+    for k, v in FACT_DEFAULTS.items(): t.setdefault(k, v)
 
 for t in TOWNS:
     d = Path(t["slug"]); d.mkdir(exist_ok=True)
